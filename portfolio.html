@@ -1,0 +1,3646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rida Zahra – Computer Engineering Student at NUST. Passionate about Embedded Systems, FPGA, AI, and IoT." />
+  <meta name="keywords" content="Rida Zahra, Computer Engineering, NUST, Embedded Systems, FPGA, AI, Machine Learning, Portfolio" />
+  <meta name="author" content="Rida Zahra" />
+  <title>Rida Zahra | Computer Engineering Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       CSS CUSTOM PROPERTIES (TOKEN SYSTEM)
+    ============================================================ */
+    :root {
+      --navy:       #161616;
+      --blue:       #6B5A9E;
+      --blue-mid:   #8577B5;
+      --blue-light: #E2D9F4;
+      --ice:        #FAF7FE;
+      --ice-mid:    #F4EFFB;
+      --white:      #FFFFFF;
+      --bg:         #FDFCFF;
+      --surface:    #FFFFFF;
+      --border:     #ECE5F7;
+      --text-primary:   #1A1A1A;
+      --text-secondary: #3A3A3A;
+      --text-muted:     #767085;
+
+      /* Professional slate extended palette */
+      --slate-dark:   #8D7CB8;
+      --slate-mid:    #A79AD1;
+      --slate-light:  #D9CFEF;
+      --slate-cloud:  #F4EFFB;
+      --slate-silver: #EAE2F6;
+      --slate-steel:  #C2B6DE;
+
+      /* Single constant color used for every project thumbnail (no more mixed blues) */
+      --project-img-grad: linear-gradient(135deg, var(--navy) 0%, var(--slate-dark) 100%);
+
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body:    'Inter', sans-serif;
+
+      --radius-sm:  6px;
+      --radius-md:  12px;
+      --radius-lg:  20px;
+      --radius-xl:  28px;
+
+      --shadow-sm:  0 1px 4px rgba(58,49,92,0.07);
+      --shadow-md:  0 4px 20px rgba(58,49,92,0.10);
+      --shadow-lg:  0 12px 40px rgba(58,49,92,0.13);
+
+      --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+      --nav-h: 68px;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+
+    /* ============================================================
+       UTILITY CLASSES
+    ============================================================ */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .section-label {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.18;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    .section-header {
+      margin-bottom: 56px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 24px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition);
+      border: 2px solid transparent;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      border-color: var(--blue);
+    }
+    .btn-primary:hover {
+      background: var(--navy);
+      border-color: var(--navy);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--blue);
+      border-color: var(--blue);
+    }
+    .btn-outline:hover {
+      background: var(--blue);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-ghost {
+      background: rgba(255,255,255,0.12);
+      color: var(--white);
+      border-color: rgba(255,255,255,0.35);
+    }
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.22);
+      transform: translateY(-2px);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 3px 10px;
+      background: var(--ice);
+      color: var(--blue);
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      font-family: var(--font-display);
+      letter-spacing: 0.02em;
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+
+    #navbar.scrolled {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      transition: color var(--transition);
+    }
+    #navbar.scrolled .nav-logo { color: var(--navy); }
+
+    .nav-links {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+      padding: 6px 10px;
+      border-radius: var(--radius-sm);
+      transition: all var(--transition);
+    }
+    .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.12); }
+    #navbar.scrolled .nav-links a { color: var(--text-secondary); }
+    #navbar.scrolled .nav-links a:hover { color: var(--blue); background: var(--ice); }
+
+    .nav-cta {
+      margin-left: 8px;
+      padding: 7px 16px;
+      background: var(--blue);
+      color: var(--white) !important;
+      border-radius: var(--radius-sm);
+    }
+    .nav-cta:hover { background: var(--navy) !important; color: var(--white) !important; }
+    #navbar.scrolled .nav-cta { background: var(--blue); color: var(--white) !important; }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all var(--transition);
+    }
+    #navbar.scrolled .nav-hamburger span { background: var(--navy); }
+
+    /* Mobile nav */
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: var(--nav-h);
+      left: 0; right: 0;
+      background: var(--white);
+      padding: 20px 24px 28px;
+      box-shadow: var(--shadow-lg);
+      z-index: 999;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      transition: all var(--transition);
+    }
+    .nav-mobile a:hover { background: var(--ice); color: var(--blue); }
+
+    /* ============================================================
+       HERO SECTION
+    ============================================================ */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(145deg, #4B3B7A 0%, #5C4B8F 40%, #6E5DA0 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: var(--nav-h);
+    }
+
+    /* Glowing accent blob */
+    #hero::after {
+      content: '';
+      position: absolute;
+      top: 15%;
+      right: -5%;
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle, rgba(141,124,184,0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      padding: 80px 0 100px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(141,124,184,0.2);
+      border: 1px solid rgba(201,190,232,0.35);
+      border-radius: 100px;
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 28px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      display: block;
+      width: 7px;
+      height: 7px;
+      background: var(--blue-light);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 6vw, 4.2rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+
+    .hero-name span {
+      color: var(--blue-light);
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 24px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-tagline {
+      font-size: 1.08rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.7;
+      max-width: 480px;
+      margin-bottom: 36px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 44px;
+    }
+
+    .hero-tag {
+      padding: 5px 12px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.7);
+      font-family: var(--font-display);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+
+    .hero-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .hero-social a {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius-sm);
+      color: rgba(255,255,255,0.65);
+      font-size: 0.85rem;
+      transition: all var(--transition);
+    }
+    .hero-social a:hover {
+      border-color: var(--blue-light);
+      color: var(--blue-light);
+      background: rgba(141,124,184,0.12);
+    }
+
+    /* Hero right: stats card */
+    .hero-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-xl);
+      padding: 40px 36px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card-title {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 28px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .hero-stat {
+      background: rgba(255,255,255,0.06);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .hero-stat-num {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .hero-stat-label {
+      font-size: 0.73rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 500;
+    }
+
+    .hero-focus-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hero-focus-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.72);
+    }
+
+    .hero-focus-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--blue-light);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Scroll hint */
+    .scroll-hint {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.72rem;
+      font-family: var(--font-display);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      animation: bounce 2.2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    .scroll-hint svg { opacity: 0.45; }
+
+    /* ============================================================
+       ABOUT SECTION
+    ============================================================ */
+    #about { background: var(--white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .about-text p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .highlight-card {
+      padding: 20px;
+      background: var(--bg);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      transition: all var(--transition);
+    }
+
+    .highlight-card:hover {
+      border-color: var(--ice-mid);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-2px);
+    }
+
+    .highlight-icon {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .highlight-label {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    /* About right: quick facts */
+    .about-facts {
+      background: linear-gradient(145deg, #5C4B8F, #6E5DA0);
+      border-radius: var(--radius-xl);
+      padding: 40px 36px;
+      color: var(--white);
+    }
+
+    .about-facts-title {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 28px;
+    }
+
+    .fact-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      gap: 16px;
+    }
+    .fact-row:last-child { border-bottom: none; }
+
+    .fact-key {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+
+    .fact-val {
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--white);
+      text-align: right;
+    }
+
+    /* ============================================================
+       SKILLS SECTION
+    ============================================================ */
+    #skills { background: var(--bg); }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .skill-category {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition);
+    }
+
+    .skill-category:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--ice-mid);
+    }
+
+    .skill-cat-title {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skill-cat-title::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--blue);
+      border-radius: 2px;
+    }
+
+    /* Programming skills with bars */
+    .skill-bar-item {
+      margin-bottom: 18px;
+    }
+    .skill-bar-item:last-child { margin-bottom: 0; }
+
+    .skill-bar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 7px;
+    }
+
+    .skill-bar-name {
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .skill-bar-pct {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--blue);
+    }
+
+    .skill-bar-track {
+      height: 6px;
+      background: var(--ice);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--slate-dark), var(--slate-mid));
+      border-radius: 100px;
+      width: 0%;
+      transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* Tag-based skills */
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      padding: 6px 14px;
+      background: var(--ice);
+      color: var(--blue);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 600;
+      border: 1px solid var(--ice-mid);
+      transition: all var(--transition);
+    }
+
+    .skill-tag:hover {
+      background: var(--blue);
+      color: var(--white);
+      border-color: var(--blue);
+    }
+
+    /* ============================================================
+       PROJECTS SECTION
+    ============================================================ */
+    #projects { background: var(--white); }
+
+    .projects-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 10px 20px;
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      transition: all var(--transition);
+      margin-bottom: -1px;
+    }
+
+    .tab-btn:hover { color: var(--blue); }
+    .tab-btn.active {
+      color: var(--blue);
+      border-bottom-color: var(--blue);
+    }
+
+    .projects-panel { display: none; }
+    .projects-panel.active { display: block; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    /* ============================================================
+       PROJECT CARD
+       To add a new project: duplicate the entire .project-card div
+       To use a real screenshot instead of the icon placeholder,
+       replace the <svg>...</svg> and .project-img-label inside
+       .project-img with: <img src="your-image.jpg" alt="Project name">
+    ============================================================ */
+    .project-card {
+      background: var(--bg);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--ice-mid);
+    }
+
+    .project-img {
+      height: 108px;
+      background: var(--project-img-grad);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.25);
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-img svg {
+      opacity: 0.18;
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 52px;
+      height: 52px;
+    }
+
+    /* Real screenshot support: drop an <img> straight into .project-img */
+    .project-img img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-img-label {
+      position: relative;
+      z-index: 1;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.68rem;
+    }
+
+    .project-body {
+      padding: 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-title {
+      font-family: var(--font-display);
+      font-size: 0.87rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .project-desc {
+      font-size: 0.76rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 12px;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 14px;
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 6px;
+    }
+
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 0.72rem;
+    }
+
+    /* ============================================================
+       EXPERIENCE SECTION
+       To add an internship: duplicate the .exp-card div
+    ============================================================ */
+    #experience { background: var(--bg); }
+
+    .exp-timeline {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .exp-timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--slate-dark), var(--ice-mid));
+      border-radius: 2px;
+    }
+
+    .exp-card {
+      margin-left: 56px;
+      position: relative;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 28px 32px;
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+      transition: all var(--transition);
+    }
+
+    .exp-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--ice-mid);
+    }
+
+    .exp-card::before {
+      content: '';
+      position: absolute;
+      left: -43px;
+      top: 28px;
+      width: 12px;
+      height: 12px;
+      background: var(--blue);
+      border-radius: 50%;
+      border: 3px solid var(--white);
+      box-shadow: 0 0 0 2px var(--blue);
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .exp-role {
+      font-family: var(--font-display);
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .exp-duration {
+      font-family: var(--font-display);
+      font-size: 0.76rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      background: var(--ice);
+      color: var(--blue);
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .exp-org {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 4px;
+    }
+
+    .exp-location {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .exp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .exp-list li {
+      font-size: 0.87rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .exp-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-size: 0.78rem;
+    }
+
+    /* ============================================================
+       EDUCATION SECTION
+    ============================================================ */
+    #education { background: var(--white); }
+
+    .edu-card {
+      background: linear-gradient(145deg, #4B3B7A 0%, #5C4B8F 60%, #6B5A9E 100%);
+      border-radius: var(--radius-xl);
+      padding: 52px 56px;
+      color: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .edu-degree {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .edu-university {
+      font-size: 0.95rem;
+      color: var(--blue-light);
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+
+    .edu-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .edu-metric {
+      background: rgba(255,255,255,0.07);
+      border-radius: var(--radius-md);
+      padding: 18px;
+    }
+
+    .edu-metric-num {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 3px;
+    }
+
+    .edu-metric-label {
+      font-size: 0.73rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .edu-courses-title {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 16px;
+    }
+
+    .edu-courses {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .edu-course {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.87rem;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .edu-course::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      background: var(--blue-light);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       CERTIFICATIONS SECTION
+       To add a certification: duplicate .cert-card
+    ============================================================ */
+    #certifications { background: var(--bg); }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .cert-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      border: 1px solid var(--border);
+      transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .cert-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--ice-mid);
+      transform: translateY(-2px);
+    }
+
+    .cert-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--ice);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 4px;
+    }
+
+    .cert-name {
+      font-family: var(--font-display);
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+
+    .cert-provider {
+      font-size: 0.78rem;
+      color: var(--blue);
+      font-weight: 600;
+    }
+
+    .cert-date {
+      font-size: 0.73rem;
+      color: var(--text-muted);
+    }
+
+    .cert-link {
+      margin-top: auto;
+      font-family: var(--font-display);
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--blue);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap var(--transition);
+    }
+    .cert-link:hover { gap: 8px; }
+
+    /* ============================================================
+       ACHIEVEMENTS SECTION
+    ============================================================ */
+    #achievements { background: var(--white); }
+
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .ach-card {
+      background: var(--bg);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      border: 1px solid var(--border);
+      transition: all var(--transition);
+    }
+
+    .ach-card:hover {
+      border-color: var(--ice-mid);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .ach-card.featured {
+      background: linear-gradient(135deg, #5C4B8F, #6B5A9E);
+      color: var(--white);
+      border-color: transparent;
+    }
+
+    /* Optional image at the top of an achievement card.
+       Only appears if you add the .ach-img block inside a .ach-card (see markup below) —
+       cards without it look exactly as before. */
+    .ach-img {
+      width: 100%;
+      height: 130px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .ach-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .ach-emoji {
+      font-size: 2rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .ach-title {
+      font-family: var(--font-display);
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .ach-card.featured .ach-title { color: var(--white); }
+
+    .ach-desc {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .ach-card.featured .ach-desc { color: rgba(255,255,255,0.72); }
+
+    /* ============================================================
+       STARTUP SECTION
+    ============================================================ */
+    #startup { background: var(--bg); }
+
+    .startup-card {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      padding: 48px 52px;
+      border: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .startup-role {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+
+    .startup-name {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .startup-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      max-width: 500px;
+      margin-bottom: 24px;
+    }
+
+    .startup-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .startup-badge {
+      background: linear-gradient(145deg, #5C4B8F, #6E5DA0);
+      color: var(--blue-light);
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      text-align: center;
+      min-width: 160px;
+    }
+
+    .startup-badge-text {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .startup-badge-date {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ============================================================
+       RESUME SECTION
+    ============================================================ */
+    #resume { background: var(--white); }
+
+    .resume-card {
+      background: linear-gradient(145deg, #4B3B7A 0%, #5C4B8F 60%, #6B5A9E 100%);
+      border-radius: var(--radius-xl);
+      padding: 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .resume-text-label {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 14px;
+    }
+
+    .resume-text-heading {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .resume-text-body {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+
+    .resume-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Resume preview card */
+    .resume-preview {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .rp-bar {
+      height: 10px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 100px;
+    }
+
+    .rp-bar.wide { width: 70%; }
+    .rp-bar.medium { width: 50%; }
+    .rp-bar.short { width: 35%; }
+    .rp-bar.accent { background: rgba(141,124,184,0.35); width: 60%; }
+
+    .rp-name-block {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    /* ============================================================
+       CONTACT SECTION
+    ============================================================ */
+    #contact { background: var(--bg); }
+
+    .contact-card {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      padding: 52px 56px;
+      border: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .contact-heading {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .contact-body {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      transition: color var(--transition);
+    }
+
+    .contact-link:hover { color: var(--blue); }
+
+    .contact-link-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--ice);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue);
+      flex-shrink: 0;
+      transition: all var(--transition);
+    }
+
+    .contact-link:hover .contact-link-icon {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .contact-link-text {
+      font-family: var(--font-display);
+      font-weight: 600;
+    }
+
+    .contact-link-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Right: decorative panel */
+    .contact-visual {
+      background: linear-gradient(145deg, #5C4B8F, #6B5A9E);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 280px;
+    }
+
+    .contact-visual-heading {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .contact-visual-sub {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .availability-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 100px;
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      margin-top: auto;
+    }
+
+    .availability-dot {
+      width: 8px;
+      height: 8px;
+      background: #4CAF50;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    #footer {
+      background: linear-gradient(135deg, #4B3B7A 0%, #6E5DA0 100%);
+      padding: 40px 0 32px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .footer-copy {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 4px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 10px;
+    }
+
+    .footer-social a {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.55);
+      transition: all var(--transition);
+    }
+    .footer-social a:hover {
+      border-color: var(--blue-light);
+      color: var(--blue-light);
+    }
+
+    .back-to-top {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.65);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .back-to-top:hover {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: var(--white);
+    }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .hero-card { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .edu-card { grid-template-columns: 1fr; gap: 36px; padding: 36px; }
+      .cert-grid { grid-template-columns: repeat(2, 1fr); }
+      .achievements-grid { grid-template-columns: repeat(2, 1fr); }
+      .startup-card { grid-template-columns: 1fr; }
+      .startup-badge { display: none; }
+      .resume-card { grid-template-columns: 1fr; }
+      .resume-preview { display: none; }
+      .contact-card { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .section { padding: 64px 0; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .cert-grid { grid-template-columns: 1fr; }
+      .achievements-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .about-highlights { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .contact-card { padding: 32px 24px; }
+      .resume-card { padding: 36px 28px; }
+      .edu-card { padding: 28px 24px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* ============================================================
+       UI ENHANCEMENTS
+    ============================================================ */
+
+    /* Softer card shadows with warm tint */
+    .skill-category,
+    .exp-card,
+    .cert-card,
+    .ach-card,
+    .project-card,
+    .contact-card,
+    .startup-card {
+      box-shadow: 0 2px 8px rgba(58,49,92,0.06);
+    }
+
+    .skill-category:hover,
+    .exp-card:hover,
+    .cert-card:hover,
+    .ach-card:hover,
+    .project-card:hover {
+      box-shadow: 0 8px 28px rgba(58,49,92,0.12);
+    }
+
+    /* Warmer border on hover */
+    .project-card:hover,
+    .cert-card:hover,
+    .highlight-card:hover {
+      border-color: var(--slate-light);
+    }
+
+    /* Refined section backgrounds */
+    #about  { background: var(--white); }
+    #skills { background: var(--ice); }
+    #projects { background: var(--white); }
+    #experience { background: var(--ice); }
+    #research { background: var(--white); }
+    #education { background: var(--white); }
+    #certifications { background: var(--ice); }
+    #achievements { background: var(--white); }
+    #startup { background: var(--ice); }
+    #resume { background: var(--white); }
+    #contact { background: var(--ice); }
+
+    /* Scrolled nav - warm white with subtle border */
+    #navbar.scrolled {
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 var(--border), 0 4px 20px rgba(58,49,92,0.06);
+    }
+
+    /* Refined skill bars */
+    .skill-bar-track {
+      height: 5px;
+      background: var(--ice-mid);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #6B5A9E, #A79AD1);
+      border-radius: 100px;
+      width: 0%;
+      transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* Better tag styling */
+    .tag {
+      display: inline-block;
+      padding: 3px 10px;
+      background: var(--ice);
+      color: #6B5A9E;
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      font-family: var(--font-display);
+      letter-spacing: 0.02em;
+      border: 1px solid var(--ice-mid);
+    }
+
+    /* Timeline line lighter */
+    .exp-timeline::before {
+      background: linear-gradient(to bottom, #E2D9F4, #F4EFFB);
+    }
+
+    /* exp card dot lighter */
+    .exp-card::before {
+      background: var(--blue);
+      box-shadow: 0 0 0 3px rgba(75,63,114,0.15);
+    }
+
+    /* Nicer contact visual padding */
+    .contact-visual {
+      border-radius: var(--radius-xl);
+      padding: 40px 36px;
+      color: var(--white);
+    }
+
+    /* More readable hero text */
+    .hero-title {
+      color: rgba(255,255,255,0.75);
+    }
+
+    .hero-tagline {
+      color: rgba(255,255,255,0.88);
+    }
+
+    /* Softer section label color */
+    .section-label {
+      color: #6B5A9E;
+    }
+
+    /* Better button primary */
+    .btn-primary {
+      background: #6B5A9E;
+      border-color: #6B5A9E;
+      box-shadow: 0 2px 8px rgba(75,63,114,0.2);
+    }
+    .btn-primary:hover {
+      background: #5C4B8F;
+      border-color: #5C4B8F;
+      box-shadow: 0 4px 16px rgba(75,63,114,0.32);
+    }
+
+    /* Animated gradient hero badge glow */
+    .hero-badge {
+      background: rgba(141,124,184,0.12);
+      border-color: rgba(201,190,232,0.4);
+    }
+
+    /* ============================================================
+       PROJECT DETAIL BUTTON
+    ============================================================ */
+    .btn-details {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 16px;
+      font-size: 0.76rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: transparent;
+      color: var(--navy);
+      border: 1.5px solid var(--slate-light);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      overflow: hidden;
+      transition: color 0.3s ease, border-color 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .btn-details::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--navy);
+      transform: translateX(-101%);
+      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+      z-index: 0;
+    }
+
+    .btn-details:hover::before { transform: translateX(0); }
+    .btn-details:hover { color: var(--white); border-color: var(--navy); }
+
+    .btn-details span,
+    .btn-details svg { position: relative; z-index: 1; }
+
+    .btn-details .details-arrow {
+      transition: transform 0.3s ease;
+    }
+    .btn-details:hover .details-arrow { transform: translateX(3px); }
+
+    /* ============================================================
+       PROJECT MODAL
+    ============================================================ */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(58,49,92,0.55);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-box {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      max-width: 680px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      box-shadow: 0 32px 80px rgba(58,49,92,0.28);
+      transform: translateY(28px) scale(0.97);
+      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+      position: relative;
+    }
+
+    .modal-overlay.open .modal-box {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-header {
+      height: 200px;
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+      background: linear-gradient(135deg, #5C4B8F 0%, #6B5A9E 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .modal-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201,190,232,0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,190,232,0.1) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    .modal-header svg { opacity: 0.22; position: relative; z-index: 1; }
+
+    .modal-header img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      z-index: 0;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px; right: 16px;
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: white;
+      cursor: pointer;
+      z-index: 2;
+      transition: background 0.2s ease;
+    }
+    .modal-close:hover { background: rgba(255,255,255,0.28); }
+
+    .modal-body { padding: 36px 40px 40px; }
+
+    .modal-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .modal-category {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+
+    .modal-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .modal-desc {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.78;
+      margin-bottom: 24px;
+    }
+
+    .modal-section-label {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .modal-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 28px;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .modal-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 24px 0;
+    }
+
+    .modal-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .modal-highlight-item {
+      background: var(--bg);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+    }
+
+    .modal-highlight-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .modal-highlight-val {
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    @media (max-width: 640px) {
+      .modal-body { padding: 24px 20px 28px; }
+      .modal-highlights { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">Rida Zahra</a>
+      <ul class="nav-links" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<nav class="nav-mobile" id="mobileNav" aria-label="Mobile navigation">
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#skills" class="mobile-link">Skills</a>
+  <a href="#projects" class="mobile-link">Projects</a>
+  <a href="#experience" class="mobile-link">Experience</a>
+  <a href="#research" class="mobile-link">Research</a>
+  <a href="#education" class="mobile-link">Education</a>
+  <a href="#achievements" class="mobile-link">Achievements</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+</nav>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section id="hero" aria-label="Introduction">
+  <div class="container">
+    <div class="hero-inner">
+
+      <!-- Left -->
+      <div>
+        <div class="hero-badge">Computer Engineering · NUST</div>
+        <h1 class="hero-name">Rida<br><span>Zahra</span></h1>
+        <p class="hero-title">Computer Engineering Student</p>
+        <p class="hero-tagline">Engineering intelligent solutions where hardware and software work together.</p>
+
+        <div class="hero-tags">
+          <span class="hero-tag">Embedded Systems</span>
+          <span class="hero-tag">FPGA Design</span>
+          <span class="hero-tag">Edge AI</span>
+          <span class="hero-tag">IoT</span>
+          <span class="hero-tag">Computer Vision</span>
+          <span class="hero-tag">Deep Learning</span>
+        </div>
+
+        <div class="hero-actions">
+          <!-- === Replace href with your actual resume PDF path === -->
+          <a href="resume.pdf" download class="btn btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Resume
+          </a>
+          <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+        </div>
+
+        <div class="hero-social">
+          <!-- === Replace # with actual LinkedIn URL === -->
+          <a href="https://www.linkedin.com/in/ridazahra" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <!-- === Replace # with actual GitHub URL === -->
+          <a href="https://github.com/ridazahra" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a href="mailto:rz.ridazahra@gmail.com" aria-label="Email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: stats card -->
+      <div class="hero-card" aria-hidden="true">
+        <p class="hero-card-title">Quick Overview</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num">3.94</div>
+            <div class="hero-stat-label">CGPA / 4.00</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">2027</div>
+            <div class="hero-stat-label">Expected Grad</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">3+</div>
+            <div class="hero-stat-label">Internships</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">18+</div>
+            <div class="hero-stat-label">Projects</div>
+          </div>
+        </div>
+        <div class="hero-focus-list">
+          <div class="hero-focus-item"><span class="hero-focus-dot"></span>SoC & RISC-V development</div>
+          <div class="hero-focus-item"><span class="hero-focus-dot"></span>Edge AI & Computer Vision</div>
+          <div class="hero-focus-item"><span class="hero-focus-dot"></span>IoT & Embedded Systems</div>
+          <div class="hero-focus-item"><span class="hero-focus-dot"></span>Full-Stack Development</div>
+          <div class="hero-focus-item"><span class="hero-focus-dot"></span>Award-winning innovator</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14m0 0l-4-4m4 4l4-4"/></svg>
+    Scroll
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+============================================================ -->
+<section id="about" class="section" aria-label="About Rida Zahra">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="reveal">
+        <p class="section-label">About Me</p>
+        <h2 class="section-title">Hardware meets software — that's my domain.</h2>
+        <div class="about-text">
+          <p>I'm Rida Zahra, a Computer Engineering student at NUST (National University of Sciences and Technology), Pakistan, with a strong academic record and expected graduation in 2027.</p>
+          <p>I'm passionate about building systems that live at the intersection of hardware and software — from deploying real-time AI models on edge devices to designing SoC architectures, developing IoT prototypes, and building full-stack applications.</p>
+          <p>With hands-on internship experience in SoC chip design, machine learning, and Python development, I continuously seek challenges that push the boundaries of what embedded intelligence can do.</p>
+        </div>
+
+        <div class="about-highlights">
+          <div class="highlight-card">
+            <div class="highlight-icon">🎓</div>
+            <div class="highlight-label">3.94 / 4.00 CGPA</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">🔧</div>
+            <div class="highlight-label">Hardware + Software</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">🤖</div>
+            <div class="highlight-label">Edge AI & Vision</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">🏆</div>
+            <div class="highlight-label">Award Winner</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="about-facts">
+          <p class="about-facts-title">At a Glance</p>
+          <div class="fact-row">
+            <span class="fact-key">University</span>
+            <span class="fact-val">NUST, Islamabad</span>
+          </div>
+          <div class="fact-row">
+            <span class="fact-key">Degree</span>
+            <span class="fact-val">B.E. Computer Engineering</span>
+          </div>
+          <div class="fact-row">
+            <span class="fact-key">CGPA</span>
+            <span class="fact-val">3.94 / 4.00</span>
+          </div>
+          <div class="fact-row">
+            <span class="fact-key">Graduation</span>
+            <span class="fact-val">June 2027</span>
+          </div>
+          <div class="fact-row">
+            <span class="fact-key">Location</span>
+            <span class="fact-val">Islamabad, Pakistan</span>
+          </div>
+          <div class="fact-row">
+            <span class="fact-key">Focus Areas</span>
+            <span class="fact-val">FPGA · AI · IoT · SoC</span>
+          </div>
+          <div class="fact-row">
+            <span class="fact-key">Email</span>
+            <span class="fact-val">rz.ridazahra@gmail.com</span>
+          </div>
+          <div class="fact-row">
+            <span class="fact-key">Status</span>
+            <span class="fact-val" style="color:#4CAF50">Open to Opportunities</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SKILLS
+============================================================ -->
+<section id="skills" class="section" aria-label="Technical Skills">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">Technical Skills</p>
+      <h2 class="section-title">Engineering across the full stack</h2>
+      <p class="section-subtitle">From RTL design and RISC-V assembly to deep learning pipelines and full-stack web development.</p>
+    </div>
+
+    <div class="skills-grid">
+
+      <!-- Programming Languages -->
+      <div class="skill-category reveal">
+        <div class="skill-cat-title">Programming Languages</div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header">
+            <span class="skill-bar-name">Python</span>
+            <span class="skill-bar-pct">90%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header">
+            <span class="skill-bar-name">C++</span>
+            <span class="skill-bar-pct">80%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header">
+            <span class="skill-bar-name">C</span>
+            <span class="skill-bar-pct">75%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header">
+            <span class="skill-bar-name">Java</span>
+            <span class="skill-bar-pct">70%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header">
+            <span class="skill-bar-name">JavaScript</span>
+            <span class="skill-bar-pct">70%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header">
+            <span class="skill-bar-name">Verilog / RISC-V Assembly</span>
+            <span class="skill-bar-pct">65%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div>
+        </div>
+      </div>
+
+      <!-- AI & Machine Learning -->
+      <div class="skill-category reveal">
+        <div class="skill-cat-title">AI & Machine Learning</div>
+        <div class="skill-tags">
+          <span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">TensorFlow Lite</span>
+          <span class="skill-tag">Scikit-learn</span>
+          <span class="skill-tag">ONNX</span>
+          <span class="skill-tag">YOLOv8</span>
+          <span class="skill-tag">OpenCV</span>
+          <span class="skill-tag">Deep Learning</span>
+          <span class="skill-tag">Edge AI Deployment</span>
+          <span class="skill-tag">Computer Vision</span>
+          <span class="skill-tag">Image Processing</span>
+          <span class="skill-tag">Lane Detection</span>
+          <span class="skill-tag">Object Detection</span>
+        </div>
+      </div>
+
+      <!-- Hardware & Embedded -->
+      <div class="skill-category reveal">
+        <div class="skill-cat-title">Hardware & Embedded Systems</div>
+        <div class="skill-tags">
+          <span class="skill-tag">ESP32</span>
+          <span class="skill-tag">Raspberry Pi</span>
+          <span class="skill-tag">Arduino</span>
+          <span class="skill-tag">FreeRTOS</span>
+          <span class="skill-tag">FPGA Development</span>
+          <span class="skill-tag">Verilog</span>
+          <span class="skill-tag">VHDL</span>
+          <span class="skill-tag">RISC-V SoC</span>
+          <span class="skill-tag">Embedded Linux</span>
+          <span class="skill-tag">IoT</span>
+          <span class="skill-tag">Digital Logic Design</span>
+          <span class="skill-tag">Microprocessors</span>
+        </div>
+      </div>
+
+      <!-- Software Engineering -->
+      <div class="skill-category reveal">
+        <div class="skill-cat-title">Software Engineering & Tools</div>
+        <div class="skill-tags">
+          <span class="skill-tag">OOP</span>
+          <span class="skill-tag">Data Structures & Algorithms</span>
+          <span class="skill-tag">Git & GitHub</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">ASP.NET Core MVC</span>
+          <span class="skill-tag">Flask</span>
+          <span class="skill-tag">Database Systems</span>
+          <span class="skill-tag">SQL Server</span>
+          <span class="skill-tag">Computer Networks</span>
+          <span class="skill-tag">Operating Systems</span>
+          <span class="skill-tag">MATLAB</span>
+          <span class="skill-tag">QEMU</span>
+          <span class="skill-tag">Linux</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROJECTS
+     To add a project: duplicate a .project-card div
+     To add a category: add a new .tab-btn + .projects-panel pair
+============================================================ -->
+<section id="projects" class="section" aria-label="Projects">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">Portfolio</p>
+      <h2 class="section-title">Projects that ship</h2>
+      <p class="section-subtitle">A selection of real-world engineering projects across AI, embedded systems, and software development.</p>
+    </div>
+
+    <div class="projects-tabs" role="tablist" aria-label="Project categories">
+      <button class="tab-btn active" role="tab" aria-selected="true" data-tab="all">All Projects</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="ai">AI & Vision</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="embedded">Embedded & IoT</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="riscv">RISC-V & Chip Design</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="dsp">Digital Signal Processing</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="software">Software</button>
+    </div>
+
+    <!-- All Projects (auto-populated by JS from the panels below — nothing to edit here) -->
+    <div class="projects-panel active" id="tab-all" role="tabpanel">
+      <div class="projects-grid" id="allProjectsGrid"></div>
+    </div>
+
+    <!-- AI & Vision Projects -->
+    <div class="projects-panel" id="tab-ai" role="tabpanel">
+      <div class="projects-grid">
+
+        <!-- PROJECT CARD — duplicate this block to add a project -->
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="images/drive.png" alt="Project screenshot">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Real-Time Autonomous Driving Assistant</h3>
+            <p class="project-desc">Lane and obstacle detection system with real-time driving decisions (Forward, Stop, Turn, Reverse) from camera inputs. Optimized for CPU-only performance at ~12 FPS with multi-threaded processing.</p>
+            <div class="project-tech">
+              <span class="tag">OpenCV</span>
+              <span class="tag">YOLOv8</span>
+              <span class="tag">Python</span>
+              <span class="tag">DIP</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Rzrida/Real-time-Multi-Stream-Image-and-Hybrid-Control-for-Self-Driving-Capabilities" class="btn btn-primary btn-sm" target="_blank" rel="noopener">GitHub</a>
+              <button class="btn-details btn-sm"
+                data-title="Real-Time Autonomous Driving Assistant"
+                data-category="AI & Computer Vision"
+                data-desc="A complete autonomous driving perception pipeline that performs lane detection and multi-class obstacle recognition in real time. The system maps detections to driving commands (Forward, Stop, Left Turn, Right Turn, Reverse) and runs entirely on CPU — no GPU required — achieving ~12 FPS via multi-threaded frame capture and inference. Built with OpenCV for image processing and YOLOv8 for object detection."
+                data-tech="OpenCV,YOLOv8,Python,Digital Image Processing,Multi-threading,NumPy"
+                data-role="Team Work"
+                data-duration="6 weeks"
+                data-status="Complete"
+                data-impact="~12 FPS CPU-only inference"
+                onclick="openModal(this)">
+                <span>Details</span>
+                <svg class="details-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="images/asl-cnn.png" alt="Project screenshot">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">ASL Alphabet Recognition (Deep CNN)</h3>
+            <p class="project-desc">Deep CNN achieving ~99.4% accuracy across 29 ASL classes. Handled full pipeline: dataset prep, architecture design, regularization, and conversion to TensorFlow Lite for edge deployment.</p>
+            <div class="project-tech">
+              <span class="tag">TensorFlow</span>
+              <span class="tag">TF Lite</span>
+              <span class="tag">Deep CNN</span>
+              <span class="tag">Python</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Rzrida/ASL-Alphabet-Recognition-using-Deep-CNN-TensorFlow-TFLite-" class="btn btn-primary btn-sm" target="_blank" rel="noopener">GitHub</a>
+              <button class="btn-details btn-sm"
+                data-title="ASL Alphabet Recognition (Deep CNN)"
+                data-category="AI & Deep Learning"
+                data-desc="A deep convolutional neural network trained to recognize all 29 American Sign Language alphabet classes (A–Z + space, delete, nothing) from static hand images. The project covers the full ML pipeline: data augmentation, custom CNN architecture with batch normalization and dropout regularization, training/validation analysis, and final export to TensorFlow Lite for on-device edge inference."
+                data-tech="TensorFlow,TensorFlow Lite,Deep CNN,Python,Keras,Data Augmentation,Model Quantization"
+                data-role="Team Work"
+                data-duration="4 weeks"
+                data-status="Complete"
+                data-impact="~99.4% accuracy / 29 classes"
+                onclick="openModal(this)">
+                <span>Details</span>
+                <svg class="details-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- END PROJECT CARD -->
+
+      </div>
+    </div>
+
+    <!-- Embedded & IoT Projects -->
+    <div class="projects-panel" id="tab-embedded" role="tabpanel">
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="images/calmsync.png" alt="Project screenshot">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">CalmSync – ESP32 Stress Wearable</h3>
+            <p class="project-desc">Wearable stress-monitoring device using ESP32 with BLE connectivity. Integrates simulated stress-detection sensors and haptic feedback for user relaxation. Validated on Wokwi and hardware prototype.</p>
+            <div class="project-tech">
+              <span class="tag">ESP32</span>
+              <span class="tag">C++</span>
+              <span class="tag">Arduino</span>
+              <span class="tag">IoT</span>
+              <span class="tag">BLE</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Rzrida/CalmSync-Smart_StressRelieve" class="btn btn-primary btn-sm" target="_blank" rel="noopener">GitHub</a>
+              <button class="btn-details btn-sm"
+                data-title="CalmSync – ESP32 Stress Wearable"
+                data-category="Embedded Systems & IoT"
+                data-desc="A wearable health device built around the ESP32 microcontroller that monitors physiological stress indicators in real time. Simulated sensor data drives a haptic feedback motor to prompt relaxation responses. BLE enables wireless connection to a companion mobile interface. Fully validated on Wokwi simulator before physical prototype build."
+                data-tech="ESP32,C++,Arduino Framework,BLE,Wokwi,Haptic Feedback,IoT"
+                data-role="Team Work"
+                data-duration="5 weeks"
+                data-status="Complete"
+                data-impact="Hardware prototype + Wokwi validated"
+                onclick="openModal(this)">
+                <span>Details</span>
+                <svg class="details-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="images/smartswapper.png" alt="Project screenshot">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Smart Swapper – Page Replacement Simulator</h3>
+            <p class="project-desc">Windows Forms simulator for FIFO, LRU, and Optimal page replacement algorithms. Visualizes page frame changes and compares algorithm performance using page fault analysis.</p>
+            <div class="project-tech">
+              <span class="tag">C++</span>
+              <span class="tag">C++/CLI</span>
+              <span class="tag">Windows Forms</span>
+              <span class="tag">OS</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Rzrida/Smart-Swapper---Page-Replacement-Algorithm-Simulator" class="btn btn-primary btn-sm" target="_blank" rel="noopener">GitHub</a>
+              <button class="btn-details btn-sm"
+                data-title="Smart Swapper – Page Replacement Simulator"
+                data-category="Systems Software"
+                data-desc="An interactive desktop simulator that visualizes three classic OS page replacement algorithms: FIFO, LRU, and Optimal. Users input a page reference string and frame count, then watch the simulation step through each page access, highlighting hits, faults, and evictions. Side-by-side comparison mode allows performance benchmarking across algorithms using page fault rate metrics."
+                data-tech="C++,C++/CLI,Windows Forms,.NET,Operating Systems,Algorithm Visualization"
+                data-role="Team Work"
+                data-duration="3 weeks"
+                data-status="Complete"
+                data-impact="3 algorithms with visual step-through"
+                onclick="openModal(this)">
+                <span>Details</span>
+                <svg class="details-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="images/BJT.png" alt="Project screenshot">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Single-Stage Audio Amplifier (BJT)</h3>
+            <p class="project-desc">Common-emitter BJT audio amplifier circuit achieving ≥50x voltage gain in the active region for a 30 mV peak-to-peak input, with a custom biasing network and bypass capacitors driving an 8Ω/16Ω speaker.</p>
+            <div class="project-tech">
+              <span class="tag">Circuit Design</span>
+              <span class="tag">BJT</span>
+              <span class="tag">Analog Electronics</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Rzrida/Single-stage-audio-amplifier" class="btn btn-primary btn-sm" target="_blank" rel="noopener">GitHub</a>
+              <button class="btn-details btn-sm"
+                data-title="Single-Stage Audio Amplifier (BJT)"
+                data-category="Analog Electronics"
+                data-desc="A single-stage common-emitter BJT amplifier circuit designed to linearly amplify a 30 mV peak-to-peak input signal with a voltage gain of at least 50x while staying in the active region. The design includes a carefully selected biasing network and bypass capacitors to maximize AC gain, driving an 8Ω or 16Ω speaker load with stable, distortion-free performance."
+                data-tech="BJT Transistor Design,Common-Emitter Configuration,Biasing Networks,AC Coupling,Analog Circuit Design"
+                data-role="Individual Project"
+                data-duration="2 weeks"
+                data-status="Complete"
+                data-impact="≥50x voltage gain, distortion-free output"
+                onclick="openModal(this)">
+                <span>Details</span>
+                <svg class="details-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="images/asl-project.png" alt="ASL Recognition on Raspberry Pi">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">ASL Recognition on Edge (Raspberry Pi)</h3>
+            <p class="project-desc">Developed SignEdge-ASL, a real-time American Sign Language (ASL) alphabet recognition system optimized for edge devices like Raspberry Pi. Leveraging a retrained deep CNN with ONNX, the project supports 29 ASL classes and enables low-latency inference. It features a lightweight web interface integrated with Firebase and the Telegram Bot API, allowing dynamic audio sharing, real-time updates, and seamless communication without a dedicated backend. This deployment-focused project demonstrates practical AI at the edge, combining gesture recognition, IoT, and mobile integration in a scalable, real-world system.</p>
+            <div class="project-tech">
+              <span class="tag">ONNX</span>
+              <span class="tag">Raspberry Pi</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">Edge AI</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Rzrida/ASL-Alphabet-Recognition-on-Edge-Devices-TFLite-ONNX-"
+                 class="btn btn-primary btn-sm"
+                 target="_blank">
+                 GitHub
+              </a>
+              <button class="btn-details btn-sm"
+                data-title="ASL Recognition on Edge (Raspberry Pi)"
+                data-category="Edge AI & Embedded"
+                data-desc="Deploys the trained ASL model onto a Raspberry Pi as a production-ready edge AI system. The ONNX runtime is used for efficient inference, paired with a live web interface and Firebase Realtime Database for remote monitoring. A Telegram Bot API integration delivers instant prediction notifications to the user's phone, completing a full IoT feedback loop."
+                data-tech="ONNX Runtime,Raspberry Pi,Firebase,Telegram Bot API,Python,Edge AI,Flask"
+                data-role="Team Work"
+                data-duration="3 weeks"
+                data-status="Complete"
+                data-impact="Real-time low-latency on-device inference"
+                onclick="openModal(this)">
+                <span>Details</span>
+                <svg class="details-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <!-- RISC-V & Verilog Projects -->
+    <div class="projects-panel" id="tab-riscv" role="tabpanel">
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="images/riscv.png" alt="Project screenshot">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">RISC-V Pipelined Processor with Forwarding & Hazard Unit</h3>
+            <p class="project-desc">5-stage pipelined RISC-V processor in Verilog implementing data forwarding, load-use stalling, and hazard detection at the RTL level, verified with a custom testbench and synthesized in Xilinx ISE.</p>
+            <div class="project-tech">
+              <span class="tag">Verilog</span>
+              <span class="tag">RISC-V</span>
+              <span class="tag">RTL Design</span>
+              <span class="tag">Xilinx ISE</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Rzrida/RISC-V-Pipelined-Processor-with-Forwarding-and-Data-Hazard-Unit-" class="btn btn-primary btn-sm" target="_blank" rel="noopener">GitHub</a>
+              <button class="btn-details btn-sm"
+                data-title="RISC-V Pipelined Processor with Forwarding & Hazard Unit"
+                data-category="RISC-V & Digital Design"
+                data-desc="A pipelined RISC-V processor built at the Register Transfer Level in Verilog, designed to handle data and control hazards using data forwarding and stalling techniques. Key components include a forwarding unit that bypasses data between pipeline stages, a stalling mechanism for load-use hazards where forwarding isn't sufficient, and a hazard detection/resolution unit that ensures seamless instruction execution. The design was validated with a Verilog testbench and simulated, synthesized, and optimized in Xilinx ISE."
+                data-tech="Verilog,RISC-V ISA,RTL Design,Data Forwarding,Hazard Detection,Xilinx ISE,Testbench Verification"
+                data-role="Individual Project"
+                data-duration="5 weeks"
+                data-status="Complete"
+                data-impact="Full hazard-free pipelined execution"
+                onclick="openModal(this)">
+                <span>Details</span>
+                <svg class="details-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="images/16-bit.png" alt="Project screenshot">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">16-Bit Processor (Verilog)</h3>
+            <p class="project-desc">Clock-driven 16-bit processor in Verilog with an instruction decoder that dispatches opcodes between a main ALU-driven processor and a co-processor for specialized operations.</p>
+            <div class="project-tech">
+              <span class="tag">Verilog</span>
+              <span class="tag">Digital Logic</span>
+              <span class="tag">Processor Design</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Rzrida/16-Bit-processor-on-Verilog" class="btn btn-primary btn-sm" target="_blank" rel="noopener">GitHub</a>
+              <button class="btn-details btn-sm"
+                data-title="16-Bit Processor (Verilog)"
+                data-category="RISC-V & Digital Design"
+                data-desc="A 16-bit processor built in Verilog that operates on a clock cycle. An instruction decoder splits incoming instructions into their component fields, and operations are dispatched based on opcode: designated opcodes route through the main processor's ALU, while others are handled by a dedicated co-processor for specialized operations."
+                data-tech="Verilog,Instruction Decoding,ALU Design,Co-processor Architecture,Digital Logic Design"
+                data-role="Individual Project"
+                data-duration="3 weeks"
+                data-status="Complete"
+                data-impact="Dual-path opcode dispatch (main + co-processor)"
+                onclick="openModal(this)">
+                <span>Details</span>
+                <svg class="details-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="images/4-bit.jpg" alt="Project screenshot">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">4-Bit Arithmetic & Logical ALU</h3>
+            <p class="project-desc">4-bit ALU supporting 8 arithmetic/logical operations with seven-segment display output, progressing from automatic selector-driven demo to counter-controlled and multiplexed operand/result display.</p>
+            <div class="project-tech">
+              <span class="tag">Verilog</span>
+              <span class="tag">Digital Logic</span>
+              <span class="tag">FPGA</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Rzrida/4bit-ALU" class="btn btn-primary btn-sm" target="_blank" rel="noopener">GitHub</a>
+              <button class="btn-details btn-sm"
+                data-title="4-Bit Arithmetic & Logical ALU"
+                data-category="RISC-V & Digital Design"
+                data-desc="A 4-bit ALU supporting 8 operations (2 arithmetic and 6 logical) with results shown on a seven-segment display. The design starts by automatically stepping through operations from a selector value of 7 down to 0, then extends to include incrementing, decrementing, and pausing controlled by a counter. The circuit is further enhanced with a multiplexer that displays operands, the operation number, or the result, ensuring the seven-segment display never shows blanking digits."
+                data-tech="Verilog,Digital Logic Design,Seven-Segment Display Driving,Multiplexing,Counter Design"
+                data-role="Individual Project"
+                data-duration="2 weeks"
+                data-status="Complete"
+                data-impact="8 ALU operations, non-blanking 7-seg display"
+                onclick="openModal(this)">
+                <span>Details</span>
+                <svg class="details-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="images/rtos.png" alt="Project screenshot">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">RTOS Application Development — RISC-V & FreeRTOS</h3>
+            <p class="project-desc">Built and deployed FreeRTOS applications with task scheduling, inter-task communication, and synchronization on a custom RISC-V SoC, cross-compiled to ELF and validated on QEMU and FPGA hardware.</p>
+            <div class="project-tech">
+              <span class="tag">RISC-V</span>
+              <span class="tag">FreeRTOS</span>
+              <span class="tag">ELF</span>
+              <span class="tag">FPGA</span>
+            </div>
+            <div class="project-actions">
+              <button class="btn-details btn-sm"
+                data-title="RTOS Application Development — RISC-V & FreeRTOS"
+                data-category="RISC-V & Digital Design"
+                data-desc="Built and deployed FreeRTOS applications — task scheduling, inter-task communication, and synchronization — on a custom RISC-V SoC. Applications were cross-compiled into ELF format and executed on both QEMU and FPGA hardware. Hardware abstraction for GPIO and UART peripherals demonstrated multitasking capability, and performance testing verified determinism and latency under constrained environments."
+                data-tech="RISC-V,FreeRTOS,ELF Toolchain,QEMU,FPGA,GPIO/UART HAL,RTL Design"
+                data-role="Internship — ChipXprt"
+                data-duration="Jun 2025 – Aug 2025"
+                data-status="Complete"
+                data-impact="Multitasking verified on QEMU + FPGA"
+                onclick="openModal(this)">
+                <span>Details</span>
+                <svg class="details-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="images/linux.png" alt="Project screenshot">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Linux Enablement on RISC-V</h3>
+            <p class="project-desc">Extended a custom RISC-V processor from Machine mode to Supervisor and User privilege levels, implementing privilege-level CSRs (sstatus, stvec, satp) and exception delegation for Linux support.</p>
+            <div class="project-tech">
+              <span class="tag">RISC-V</span>
+              <span class="tag">Linux</span>
+              <span class="tag">System Verilog</span>
+              <span class="tag">RTL</span>
+            </div>
+            <div class="project-actions">
+              <button class="btn-details btn-sm"
+                data-title="Linux Enablement on RISC-V"
+                data-category="RISC-V & Digital Design"
+                data-desc="Extended custom RISC-V processor support from Machine (M) mode to Supervisor (S) and User (U) modes by implementing privilege-level CSRs (e.g., sstatus, stvec, satp) and exception delegation, laying the RTL groundwork required to boot and run Linux on the SoC."
+                data-tech="RISC-V,Linux,SystemVerilog,RTL Design,Privilege-Level CSRs,Exception Delegation"
+                data-role="Internship — ChipXprt"
+                data-duration="Jun 2025 – Aug 2025"
+                data-status="Complete"
+                data-impact="S-mode & U-mode privilege support added"
+                onclick="openModal(this)">
+                <span>Details</span>
+                <svg class="details-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Digital Signal Processing Projects -->
+    <div class="projects-panel" id="tab-dsp" role="tabpanel">
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="images/airport.png" alt="Project screenshot">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Airport Noise Speech Enhancement</h3>
+            <p class="project-desc">Two-stage MATLAB speech enhancement system suppressing airport noise using the NOIZEUS corpus at 5 dB SNR. Combines a 256th-order FIR high-pass filter with a decision-directed Wiener post-filter, achieving a mean 2.28 dB SegSNR improvement across all 30 test sentences.</p>
+            <div class="project-tech">
+              <span class="tag">MATLAB</span>
+              <span class="tag">FIR Filtering</span>
+              <span class="tag">Wiener Filter</span>
+              <span class="tag">DSP</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Rzrida/Airport-Noise-Speech-Enhancement" class="btn btn-primary btn-sm" target="_blank" rel="noopener">GitHub</a>
+              <button class="btn-details btn-sm"
+                data-title="Airport Noise Speech Enhancement"
+                data-category="Digital Signal Processing"
+                data-desc="A two-stage speech enhancement system in MATLAB for suppressing airport noise using the NOIZEUS Speech Corpus at 5 dB SNR. Time-domain, PSD, FFT, and spectrogram-based analysis was first used to characterize the noise and guide filter design. Based on the observed broadband noise characteristics, a 256th-order linear-phase FIR high-pass filter with a 100 Hz cutoff suppresses low-frequency engine rumble, followed by a decision-directed Wiener post-filter in the STFT domain for adaptive in-band noise reduction. Evaluated on all 30 speech sentences using Segmental SNR, approximate PESQ, MSE, and noise reduction metrics, achieving a mean SegSNR improvement of 2.28 dB with positive improvement for every sentence."
+                data-tech="MATLAB,FIR Filter Design,STFT,Wiener Filtering,PSD/FFT Analysis,Speech Enhancement"
+                data-role="Individual Project"
+                data-duration="4 weeks"
+                data-status="Complete"
+                data-impact="2.28 dB mean SegSNR improvement"
+                onclick="openModal(this)">
+                <span>Details</span>
+                <svg class="details-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="images/5band.png" alt="Project screenshot">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">5-Band Graphic Equalizer</h3>
+            <p class="project-desc">Real-time 5-band graphic equalizer built in MATLAB and Simulink with Butterworth bandpass filters, per-band gain control, and an interactive GUI for live audio visualization and playback.</p>
+            <div class="project-tech">
+              <span class="tag">MATLAB</span>
+              <span class="tag">Simulink</span>
+              <span class="tag">Butterworth Filters</span>
+              <span class="tag">DSP</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Rzrida/5-Band-Graphic-Equalizer" class="btn btn-primary btn-sm" target="_blank" rel="noopener">GitHub</a>
+              <button class="btn-details btn-sm"
+                data-title="5-Band Graphic Equalizer"
+                data-category="Digital Signal Processing"
+                data-desc="A real-time 5-band graphic equalizer developed in MATLAB and Simulink, enabling users to adjust individual frequency bands, visualize input and output audio signals, and experience real-time audio processing. The project involved designing Butterworth bandpass filters, implementing gain control for each band, and building an interactive GUI for seamless audio playback and visualization — demonstrating practical application of DSP concepts, filter design, and UI integration for audio enhancement."
+                data-tech="MATLAB,Simulink,Butterworth Filter Design,GUI Development,Real-time Audio Processing"
+                data-role="Team Work"
+                data-duration="3 weeks"
+                data-status="Complete"
+                data-impact="Real-time 5-band adjustable EQ"
+                onclick="openModal(this)">
+                <span>Details</span>
+                <svg class="details-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Software Projects -->
+    <div class="projects-panel" id="tab-software" role="tabpanel">
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="images/hajj.png" alt="Project screenshot">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Hajj & Umrah Companion Web App</h3>
+            <p class="project-desc">Full-stack web app providing day-wise Hajj & Umrah guidance with Arabic/English support. Features authentication, session management, checklists, progress tracking, and interactive maps. Built with Agile/Scrum.</p>
+            <div class="project-tech">
+              <span class="tag">ASP.NET Core MVC</span>
+              <span class="tag">Bootstrap</span>
+              <span class="tag">C#</span>
+              <span class="tag">Full-Stack</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Rzrida/Hajj-Umrah-Guide-WebApp-ASPNetCore-MVC-/blob/main/README.md" class="btn btn-primary btn-sm" target="_blank" rel="noopener">GitHub</a>
+              <button class="btn-details btn-sm"
+                data-title="Hajj & Umrah Companion Web App"
+                data-category="Full-Stack Web Development"
+                data-desc="A bilingual (Arabic/English) web application that guides pilgrims through the Hajj and Umrah rituals day by day. Features include user authentication, personalized checklists, progress tracking, ritual step-by-step guidance, and interactive maps of holy sites. Developed in a team following Agile/Scrum methodology with sprint planning and retrospectives."
+                data-tech="ASP.NET Core MVC,C#,Bootstrap,SQL Server,JavaScript,HTML/CSS,Agile/Scrum"
+                data-role="Team Lead"
+                data-duration="10 weeks"
+                data-status="Complete"
+                data-impact="Bilingual support · Full auth system"
+                onclick="openModal(this)">
+                <span>Details</span>
+                <svg class="details-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="images/market.png" alt="Project screenshot">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">MarketHub – Online Marketplace System</h3>
+            <p class="project-desc">Full-stack e-commerce marketplace with 21+ entity normalized database. Implements SQL triggers, views, transactions, and analytical queries. Buyer/seller modules, cart, orders, payments, dashboards.</p>
+            <div class="project-tech">
+              <span class="tag">Flask</span>
+              <span class="tag">SQL Server</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">HTML/CSS</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Rzrida/MarketHub-Database-System" class="btn btn-primary btn-sm" target="_blank" rel="noopener">GitHub</a>
+              <button class="btn-details btn-sm"
+                data-title="MarketHub – Online Marketplace System"
+                data-category="Full-Stack · Database Systems"
+                data-desc="A complete buyer/seller e-commerce platform with a 21+ entity normalized relational database. The system uses SQL Server with stored procedures, triggers, views, and transactions to ensure data integrity. Features include product listings, cart management, order tracking, payment processing, and analytics dashboards for both buyers and sellers."
+                data-tech="Flask,SQL Server,JavaScript,HTML/CSS,Python,Stored Procedures,SQL Triggers,Database Normalization"
+                data-role="Backend Lead"
+                data-duration="8 weeks"
+                data-status="Complete"
+                data-impact="21+ entity normalized DB"
+                onclick="openModal(this)">
+                <span>Details</span>
+                <svg class="details-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="images/hospital.png" alt="Project screenshot">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Hospital ED Simulation (OOP)</h3>
+            <p class="project-desc">Discrete event simulation modeling patient arrival, triage, and treatment. Applies queuing theory to analyze wait times and resource allocation. Achieved 20% simulated reduction in wait times.</p>
+            <div class="project-tech">
+              <span class="tag">Java</span>
+              <span class="tag">OOP</span>
+              <span class="tag">Simulation</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Rzrida/-Hospital-Emergency-Department-System-Simulation" class="btn btn-primary btn-sm" target="_blank" rel="noopener">GitHub</a>
+              <button class="btn-details btn-sm"
+                data-title="Hospital ED Simulation (OOP)"
+                data-category="Systems Simulation · OOP"
+                data-desc="A discrete event simulation of a hospital Emergency Department modeled using object-oriented design patterns. The system simulates patient arrival (Poisson distribution), triage prioritization, treatment room allocation, and discharge. Queuing theory metrics (average wait time, throughput, utilization) are computed and visualized. The optimized scheduling policy achieved a 20% simulated reduction in average wait times."
+                data-tech="Java,OOP Design Patterns,Discrete Event Simulation,Queuing Theory,Data Structures"
+                data-role="Team Work"
+                data-duration="4 weeks"
+                data-status="Complete"
+                data-impact="20% simulated wait time reduction"
+                onclick="openModal(this)">
+                <span>Details</span>
+                <svg class="details-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="images/file.png" alt="Project screenshot">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">File Storage System Simulation (DS)</h3>
+            <p class="project-desc">Developed a C++-based virtual file storage system that mimics a real hard disk using a 10MB file. The system supports core file operations like create, delete, modify, view, and defragment, using custom-designed data structures such as vectors, unordered maps, linked lists, and min-heaps. Efficient block management and metadata handling were implemented to simulate real-world file system behavior.</p>
+            <div class="project-tech">
+              <span class="tag">Cpp</span>
+              <span class="tag">DS</span>
+              <span class="tag">Simulation</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Rzrida/File-Storage-System-Cpp" class="btn btn-primary btn-sm" target="_blank" rel="noopener">GitHub</a>
+              <button class="btn-details btn-sm"
+                data-title="File Storage System Simulation"
+                data-category="Systems Simulation · DS"
+                data-desc="Developed a C++-based virtual file storage system that mimics a real hard disk using a 10MB file. The system supports core file operations like create, delete, modify, view, and defragment, using custom-designed data structures such as vectors, unordered maps, linked lists, and min-heaps. Efficient block management and metadata handling were implemented to simulate real-world file system behavior."
+                data-tech="Cpp,DS Design Patterns,Discrete Event Simulation,Data Structures"
+                data-role="Team Work"
+                data-duration="4 weeks"
+                data-status="Complete"
+                data-impact="Effecient space handling"
+                onclick="openModal(this)">
+                <span>Details</span>
+                <svg class="details-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="images/todo.png" alt="Project screenshot">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">To-Do List Application (C++)</h3>
+            <p class="project-desc">C++ console application handling multiple to-do list categories — daily tasks, studies, groceries, travel, finance, and health — with a login system and built-in FAQs.</p>
+            <div class="project-tech">
+              <span class="tag">C++</span>
+              <span class="tag">OOP</span>
+              <span class="tag">Console App</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Rzrida/TodolistApp-in-C-" class="btn btn-primary btn-sm" target="_blank" rel="noopener">GitHub</a>
+              <button class="btn-details btn-sm"
+                data-title="To-Do List Application (C++)"
+                data-category="Software Development"
+                data-desc="A C++ to-do list application designed to handle several lifestyle categories. Features a login system and organizes tasks into six categories — Daily Task, Studies, Grocery, Travelling, Finance, and Health — along with a built-in FAQ section for users."
+                data-tech="C++,OOP,File Handling,Console UI Design"
+                data-role="Individual Project"
+                data-duration="2 weeks"
+                data-status="Complete"
+                data-impact="6 task categories + login system"
+                onclick="openModal(this)">
+                <span>Details</span>
+                <svg class="details-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     EXPERIENCE
+     To add an internship: duplicate the .exp-card div
+============================================================ -->
+<section id="experience" class="section" aria-label="Work Experience">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">Experience</p>
+      <h2 class="section-title">Where I've applied my skills</h2>
+      <p class="section-subtitle">
+        Hands-on internship experience in SoC design, machine learning, and Python development.
+      </p>
+    </div>
+
+    <div class="exp-timeline">
+
+      <!-- INTERNSHIP CARD — duplicate this block to add more -->
+
+      
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <h3 class="exp-role">Embedded &amp; IoT Intern</h3>
+          <span class="exp-duration">Jun 2026 – Jul 2026</span>
+        </div>
+        <p class="exp-org">CARE Private Limited</p>
+        <p class="exp-location">📍 Islamabad, Pakistan</p>
+        <ul class="exp-list">
+          <li>
+            Built and tested industrial IoT monitoring solutions using MQTT,
+            ESP32 microcontrollers, and sensor integration for real-time
+            industrial applications.
+          </li>
+          <li>
+            Programmed and validated automation logic on Siemens S7-1200 PLCs
+            using Ladder Logic, implementing control sequences and interfacing
+            with industrial hardware.
+          </li>
+          <li>
+            Extracted and monitored live PLC process data, enabling integration
+            with external IoT systems and supporting data acquisition and
+            validation workflows.
+          </li>
+        </ul>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <h3 class="exp-role">Research Intern</h3>
+          <span class="exp-duration">Jul 2026 – Present</span>
+        </div>
+        <p class="exp-org">Sejong University, South Korea × NUST, Pakistan</p>
+        <p class="exp-location">📍 Hybrid — NUST, Islamabad, Pakistan</p>
+        <ul class="exp-list">
+          <li>
+            Conducting collaborative research between Sejong University and NUST,
+            with a focus on developing an independent research paper.
+          </li>
+          <li>
+            Explored an initial 3D-based implementation before pivoting due to
+            computational and resource constraints.
+          </li>
+          <li>
+            Developing a resource-efficient BAM-based approach through implementation,
+            experimentation, evaluation, and research documentation.
+          </li>
+        </ul>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <h3 class="exp-role">SoC &amp; Chip Design Intern</h3>
+          <span class="exp-duration">Jun 2025 – Aug 2025</span>
+        </div>
+        <p class="exp-org">ChipXprt Private Limited</p>
+        <p class="exp-location">📍 Islamabad, Pakistan</p>
+        <ul class="exp-list">
+          <li>
+            Ported and validated FreeRTOS on a custom RISC-V SoC; built ELF
+            toolchain and verified ISA compatibility across RTL and QEMU emulation.
+          </li>
+          <li>
+            Implemented Supervisor (S) and User (U) privilege levels with trap
+            routing and context switching — groundwork for Linux enablement.
+          </li>
+          <li>
+            Performed hardware/software integration tests and regression suites,
+            reducing boot/trap failures during validation.
+          </li>
+        </ul>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <h3 class="exp-role">Machine Learning Intern</h3>
+          <span class="exp-duration">Aug 2024</span>
+        </div>
+        <p class="exp-org">Codic Solution</p>
+        <p class="exp-location">📍 Remote</p>
+        <ul class="exp-list">
+          <li>
+            Applied Python-based machine learning techniques to develop and
+            optimize intelligent solutions.
+          </li>
+          <li>
+            Gained hands-on experience with model training, evaluation, and
+            optimization workflows.
+          </li>
+        </ul>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <h3 class="exp-role">Python Programming Intern</h3>
+          <span class="exp-duration">Jul 2024 – Aug 2024</span>
+        </div>
+        <p class="exp-org">HiSkyTech</p>
+        <p class="exp-location">📍 Remote</p>
+        <ul class="exp-list">
+          <li>
+            Developed and integrated Python modules for multiple projects,
+            focusing on reliability, scalability, and clean code practices.
+          </li>
+          <li>
+            Collaborated on modular codebase architecture and contributed to
+            production-level Python development.
+          </li>
+        </ul>
+      </div>
+
+      <!-- END INTERNSHIP CARD -->
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     RESEARCH EXPERIENCE
+     Research projects, investigations, and academic work
+============================================================ -->
+<section id="research" class="section" aria-label="Research Experience">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">Research</p>
+      <h2 class="section-title">Research &amp; Academic Work</h2>
+      <p class="section-subtitle">
+        Independent and ongoing research projects exploring signal processing,
+        audio analysis, 3D vision, and computational AI, with work currently
+        in development and not yet published.
+      </p>
+    </div>
+
+    <div class="exp-timeline">
+       
+         <!-- RESEARCH PROJECT 4 -->
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <h3 class="exp-role">BAM &amp; PolyP Research</h3>
+          <span class="exp-duration">Unpublished Research</span>
+        </div>
+        <p class="exp-org">AI &amp; Computational Research</p>
+        <p class="exp-location">📍 Independent Research</p>
+        <ul class="exp-list">
+          <li>
+            Investigating BAM and PolyP-based approaches as part of an ongoing
+            exploration of efficient computational methods.
+          </li>
+          <li>
+            Studying existing techniques and developing implementations for
+            experimental evaluation and comparison.
+          </li>
+          <li>
+            Exploring resource-efficient approaches with the goal of developing
+            a potential research contribution.
+          </li>
+        </ul>
+      </div>
+      <!-- RESEARCH PROJECT 1 -->
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <h3 class="exp-role">Airport Noise Reduction</h3>
+          <span class="exp-duration">Unpublished Research</span>
+        </div>
+        <p class="exp-org">Signal Processing &amp; Audio Analysis</p>
+        <p class="exp-location">📍 Independent Research</p>
+        <ul class="exp-list">
+          <li>
+            Investigated signal-processing techniques for reducing airport and
+            aircraft noise in audio signals.
+          </li>
+          <li>
+            Explored noise characteristics, filtering methods, and audio
+            enhancement techniques to improve signal quality.
+          </li>
+          <li>
+            Developed the work as an academic research study involving
+            implementation, experimentation, and analysis.
+          </li>
+        </ul>
+      </div>
+
+      <!-- RESEARCH PROJECT 2 -->
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <h3 class="exp-role">Quran, Music &amp; Speech: Comparative Analysis</h3>
+          <span class="exp-duration">Unpublished Research</span>
+        </div>
+        <p class="exp-org">Signal Processing &amp; Audio Analysis</p>
+        <p class="exp-location">📍 Independent Research</p>
+        <ul class="exp-list">
+          <li>
+            Conducted a comparative signal-processing study of Quranic
+            recitation, music, and speech.
+          </li>
+          <li>
+            Analyzed acoustic and auditory characteristics to investigate
+            differences in perceived relaxation and well-being.
+          </li>
+          <li>
+            Explored potential relationships between measurable audio
+            characteristics and human perceptual responses.
+          </li>
+        </ul>
+      </div>
+
+      <!-- RESEARCH PROJECT 3 -->
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <h3 class="exp-role">VISTA 3D</h3>
+          <span class="exp-duration">Unpublished Research</span>
+        </div>
+        <p class="exp-org">3D Vision &amp; Computational Research</p>
+        <p class="exp-location">📍 Independent Research</p>
+        <ul class="exp-list">
+          <li>
+            Explored a 3D-based research approach and investigated its
+            potential implementation for the target research problem.
+          </li>
+          <li>
+            Developed an initial implementation and evaluated the approach
+            against available computational and hardware resources.
+          </li>
+          <li>
+            The project was paused due to resource limitations, providing
+            direction for potential future implementation.
+          </li>
+        </ul>
+      </div>
+
+   
+
+      <!-- END RESEARCH PROJECTS -->
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     EDUCATION
+============================================================ -->
+<section id="education" class="section" aria-label="Education">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">Education</p>
+      <h2 class="section-title">Academic foundation</h2>
+    </div>
+    <div class="edu-card reveal">
+      <div>
+        <h3 class="edu-degree">Bachelor of<br>Computer Engineering</h3>
+        <p class="edu-university">National University of Sciences and Technology (NUST)</p>
+        <div class="edu-metrics">
+          <div class="edu-metric">
+            <div class="edu-metric-num">3.94</div>
+            <div class="edu-metric-label">CGPA / 4.00</div>
+          </div>
+          <div class="edu-metric">
+            <div class="edu-metric-num">2027</div>
+            <div class="edu-metric-label">Expected Graduation</div>
+          </div>
+          <div class="edu-metric">
+            <div class="edu-metric-num">2023</div>
+            <div class="edu-metric-label">Enrolled</div>
+          </div>
+          <div class="edu-metric">
+            <div class="edu-metric-num">Summa</div>
+            <div class="edu-metric-label">Cum Laude</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="edu-courses-title">Relevant Coursework</p>
+        <div class="edu-courses">
+          <div class="edu-course">Data Structures & Algorithms</div>
+          <div class="edu-course">Operating Systems</div>
+          <div class="edu-course">Computer Networks</div>
+          <div class="edu-course">Internet of Things (IoT)</div>
+          <div class="edu-course">Database Systems</div>
+          <div class="edu-course">Digital Image Processing</div>
+          <div class="edu-course">Computer Architecture</div>
+          <div class="edu-course">Embedded Systems</div>
+          <div class="edu-course">Artificial Intelligence</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ACHIEVEMENTS
+============================================================ -->
+<section id="achievements" class="section" aria-label="Achievements and Awards">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">Achievements</p>
+      <h2 class="section-title">Recognition & leadership</h2>
+      <p class="section-subtitle">Competitions won, communities led, and recognition earned.</p>
+    </div>
+
+    <!-- To add a photo to any achievement card below, drop this line right after the
+         opening <div class="ach-card ..."> tag:
+           <div class="ach-img"><img src="images/your-photo.jpg" alt="Description"></div>
+         Skip it (as most cards below do) and the card just stays text-only / "normal". -->
+    <div class="achievements-grid">
+
+      <div class="ach-card featured reveal">
+        <!-- Example (commented out, no matching file yet): uncomment and point at a real
+             image in your images/ folder to show a photo on this card.
+        <div class="ach-img"><img src="images/pitch-bazar.jpeg" alt="NSTP Pitch Bazar award"></div>
+        -->
+        <span class="ach-emoji">🏆</span>
+        <h3 class="ach-title">Winner – NSTP Pitch Bazar</h3>
+        <p class="ach-desc">Won first place at the NSTP Pitch Bazar entrepreneurship competition, presenting an innovative technology solution.</p>
+      </div>
+
+      <div class="ach-card featured reveal">
+        <span class="ach-emoji">🌍</span>
+        <h3 class="ach-title">Winner – Hult Prize (Campus Round)</h3>
+        <p class="ach-desc">Won the campus round of the prestigious international Hult Prize social entrepreneurship competition.</p>
+      </div>
+
+      <div class="ach-card reveal">
+        <span class="ach-emoji">🥈</span>
+        <h3 class="ach-title">1st Runner-Up – COMPPEC 2025</h3>
+        <p class="ach-desc">Placed 1st Runner-Up in COMPPEC 2025, a nationwide technical idea pitching competition.</p>
+      </div>
+
+      <div class="ach-card reveal">
+        <span class="ach-emoji">🥉</span>
+        <h3 class="ach-title">2nd Runner-Up – Zindagi Prize</h3>
+        <p class="ach-desc">Placed 2nd Runner-Up in the Zindagi Prize ideathon for innovative business ideas.</p>
+      </div>
+
+      <div class="ach-card reveal">
+        <span class="ach-emoji">🎓</span>
+        <h3 class="ach-title">Summa Cum Laude</h3>
+        <p class="ach-desc">Maintaining a 3.94 / 4.00 CGPA with Summa Cum Laude distinction at NUST.</p>
+      </div>
+
+      <div class="ach-card reveal">
+        <span class="ach-emoji">👩‍💼</span>
+        <h3 class="ach-title">Vice President – BRISC</h3>
+        <p class="ach-desc">Elected Vice President of BRISC, demonstrating leadership and technical community involvement.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STARTUP
+============================================================ -->
+<section id="startup" class="section" aria-label="Startup">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">Entrepreneurship</p>
+      <h2 class="section-title">Beyond engineering</h2>
+    </div>
+    <div class="startup-card reveal">
+      <div>
+        <p class="startup-role">CFO & Co-Founder</p>
+        <h3 class="startup-name">Paper Peace</h3>
+        <p class="startup-desc">Co-founded an e-commerce stationery brand. Leading financial operations, budgeting, and pricing strategy while supporting online store growth and brand expansion on Instagram.</p>
+        <p class="startup-meta">📅 January 2025 – Present &nbsp;|&nbsp; 📍 Islamabad, Pakistan</p>
+        <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="https://www.instagram.com/paperpeace" target="_blank" rel="noopener" class="btn btn-outline">
+            View on Instagram
+          </a>
+        </div>
+      </div>
+      <div class="startup-badge">
+        <p class="startup-badge-text">Active Founder</p>
+        <p class="startup-badge-date">Since Jan 2025</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CONTACT
+============================================================ -->
+<section id="contact" class="section" aria-label="Contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">Let's connect</h2>
+    </div>
+    <div class="contact-card reveal">
+      <div>
+        <h3 class="contact-heading">Open to opportunities</h3>
+        <p class="contact-body">Interested in collaborating, discussing opportunities, or connecting professionally? Whether it's an internship, research project, or just a conversation about engineering — feel free to reach out.</p>
+
+        <div class="contact-links">
+          <a href="mailto:rz.ridazahra@gmail.com" class="contact-link">
+            <div class="contact-link-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <div>
+              <div class="contact-link-text">rz.ridazahra@gmail.com</div>
+              <div class="contact-link-sub">Email</div>
+            </div>
+          </a>
+
+          <!-- === Replace with actual LinkedIn URL === -->
+          <a href="https://www.linkedin.com/in/ridazahra" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-link-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div>
+              <div class="contact-link-text">LinkedIn Profile</div>
+              <div class="contact-link-sub">linkedin.com/in/ridazahra</div>
+            </div>
+          </a>
+
+          <!-- === Replace with actual GitHub URL === -->
+          <a href="https://github.com/ridazahra" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-link-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </div>
+            <div>
+              <div class="contact-link-text">GitHub Profile</div>
+              <div class="contact-link-sub">github.com/ridazahra</div>
+            </div>
+          </a>
+
+          <a href="tel:+923336544467" class="contact-link">
+            <div class="contact-link-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-link-text">+92 333-6544467</div>
+              <div class="contact-link-sub">Phone</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-visual">
+        <div>
+          <h4 class="contact-visual-heading">Let's build something together</h4>
+          <p class="contact-visual-sub">Open to internships, research collaborations, freelance projects, and full-time roles.</p>
+        </div>
+        <div>
+          <div style="margin-bottom: 12px; font-size: 0.78rem; color: rgba(255,255,255,0.45);">Current Focus</div>
+          <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 24px;">
+            <span style="font-size: 0.82rem; color: rgba(255,255,255,0.72);">↗ SoC & RISC-V Architecture</span>
+            <span style="font-size: 0.82rem; color: rgba(255,255,255,0.72);">↗ Edge AI Deployment</span>
+            <span style="font-size: 0.82rem; color: rgba(255,255,255,0.72);">↗ Computer Vision Systems</span>
+          </div>
+          <div class="availability-badge">
+            <span class="availability-dot"></span>
+            Available for opportunities
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer id="footer" aria-label="Footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Rida Zahra</div>
+        <div class="footer-copy">© 2025 Rida Zahra. All rights reserved.</div>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/ridazahra" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://github.com/ridazahra" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+        <a href="mailto:rz.ridazahra@gmail.com" aria-label="Email">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+      </div>
+      <button class="back-to-top" id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     PROJECT DETAIL MODAL
+============================================================ -->
+<div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <div class="modal-header" id="modalHeaderImg">
+      <img id="modalHeaderImage" src="" alt="" style="display:none;">
+      <svg width="96" height="96" viewBox="0 0 24 24" fill="white" id="modalHeaderSvg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-meta">
+        <span class="modal-category" id="modalCategory">Category</span>
+      </div>
+      <h2 class="modal-title" id="modalTitle">Project Title</h2>
+      <p class="modal-desc" id="modalDesc">Description goes here.</p>
+
+      <div class="modal-highlights" id="modalHighlights">
+        <div class="modal-highlight-item">
+          <div class="modal-highlight-label">Role</div>
+          <div class="modal-highlight-val" id="modalRole">—</div>
+        </div>
+        <div class="modal-highlight-item">
+          <div class="modal-highlight-label">Duration</div>
+          <div class="modal-highlight-val" id="modalDuration">—</div>
+        </div>
+        <div class="modal-highlight-item">
+          <div class="modal-highlight-label">Status</div>
+          <div class="modal-highlight-val" id="modalStatus">—</div>
+        </div>
+        <div class="modal-highlight-item">
+          <div class="modal-highlight-label">Key Impact</div>
+          <div class="modal-highlight-val" id="modalImpact">—</div>
+        </div>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-section-label">Tech Stack</div>
+      <div class="modal-tech" id="modalTech"></div>
+
+      <div class="modal-actions">
+        <a href="#" class="btn btn-primary btn-sm" id="modalGithub">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          View on GitHub
+        </a>
+        <button class="btn btn-outline btn-sm" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+  /* ---- Navbar scroll behavior ---- */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  /* ---- Mobile hamburger ---- */
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* ---- Auto-build "All Projects" tab from the category panels ----
+     Just add/duplicate project cards inside their category panel (AI, Embedded, Software)
+     as usual — this tab keeps itself in sync automatically, no extra editing needed. */
+  const allProjectsGrid = document.getElementById('allProjectsGrid');
+  if (allProjectsGrid) {
+    document.querySelectorAll('.projects-panel:not(#tab-all) .project-card').forEach(card => {
+      allProjectsGrid.appendChild(card.cloneNode(true));
+    });
+  }
+
+  /* ---- Scroll reveal ---- */
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  /* ---- Skill bar animation ---- */
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const fills = entry.target.querySelectorAll('.skill-bar-fill');
+        fills.forEach(fill => { fill.style.width = fill.dataset.width + '%'; });
+        barObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.skill-category').forEach(cat => barObserver.observe(cat));
+
+  /* ---- Project tabs ---- */
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.projects-panel');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab;
+      tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+      tabPanels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      document.getElementById('tab-' + target).classList.add('active');
+      document.querySelectorAll('#tab-' + target + ' .reveal').forEach(el => el.classList.add('visible'));
+    });
+  });
+
+  document.querySelectorAll('.projects-panel.active .reveal').forEach(el => {
+    setTimeout(() => el.classList.add('visible'), 100);
+  });
+
+  /* ---- Project Modal ---- */
+  function openModal(btn) {
+    const modal = document.getElementById('projectModal');
+
+    // Modal header always shows the plain gradient banner (no image),
+    // even though the small thumbnail still shows on the project card.
+    const modalImg = document.getElementById('modalHeaderImage');
+    const modalSvg = document.getElementById('modalHeaderSvg');
+    modalImg.removeAttribute('src');
+    modalImg.style.display = 'none';
+    modalSvg.style.display = 'block';
+
+    document.getElementById('modalTitle').textContent = btn.dataset.title || '';
+    document.getElementById('modalCategory').textContent = btn.dataset.category || '';
+    document.getElementById('modalDesc').textContent = btn.dataset.desc || '';
+    document.getElementById('modalRole').textContent = btn.dataset.role || '—';
+    document.getElementById('modalDuration').textContent = btn.dataset.duration || '—';
+    document.getElementById('modalStatus').textContent = btn.dataset.status || '—';
+    document.getElementById('modalImpact').textContent = btn.dataset.impact || '—';
+
+    // Tech tags
+    const techContainer = document.getElementById('modalTech');
+    techContainer.innerHTML = '';
+    (btn.dataset.tech || '').split(',').forEach(t => {
+      const tag = document.createElement('span');
+      tag.className = 'tag';
+      tag.textContent = t.trim();
+      techContainer.appendChild(tag);
+    });
+
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('projectModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Close on overlay click
+  document.getElementById('projectModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>
+
+</body>
+</html>
