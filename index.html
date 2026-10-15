@@ -18,30 +18,30 @@
        CSS CUSTOM PROPERTIES (TOKEN SYSTEM)
     ============================================================ */
     :root {
-      --navy:       #161616;
-      --blue:       #6B5A9E;
-      --blue-mid:   #8577B5;
-      --blue-light: #E2D9F4;
-      --ice:        #FAF7FE;
-      --ice-mid:    #F4EFFB;
+      --navy:       #0F1F36;
+      --blue:       #1F4E79;
+      --blue-mid:   #3B6FA0;
+      --blue-light: #D6E4F2;
+      --ice:        #F5F8FC;
+      --ice-mid:    #EDF2F8;
       --white:      #FFFFFF;
-      --bg:         #FDFCFF;
+      --bg:         #FAFBFD;
       --surface:    #FFFFFF;
-      --border:     #ECE5F7;
-      --text-primary:   #1A1A1A;
-      --text-secondary: #3A3A3A;
-      --text-muted:     #767085;
+      --border:     #E1E8F0;
+      --text-primary:   #0F172A;
+      --text-secondary: #334155;
+      --text-muted:     #64748B;
 
       /* Professional slate extended palette */
-      --slate-dark:   #8D7CB8;
-      --slate-mid:    #A79AD1;
-      --slate-light:  #D9CFEF;
-      --slate-cloud:  #F4EFFB;
-      --slate-silver: #EAE2F6;
-      --slate-steel:  #C2B6DE;
+      --slate-dark:   #3F5F85;
+      --slate-mid:    #6F8FB3;
+      --slate-light:  #CBD9E8;
+      --slate-cloud:  #EDF2F8;
+      --slate-silver: #E2EAF3;
+      --slate-steel:  #A9BDD3;
 
       /* Single constant color used for every project thumbnail (no more mixed blues) */
-      --project-img-grad: linear-gradient(135deg, var(--navy) 0%, var(--slate-dark) 100%);
+      --project-img-grad: linear-gradient(135deg, var(--blue) 0%, var(--slate-mid) 100%);
 
       --font-display: 'Space Grotesk', sans-serif;
       --font-body:    'Inter', sans-serif;
@@ -51,9 +51,9 @@
       --radius-lg:  20px;
       --radius-xl:  28px;
 
-      --shadow-sm:  0 1px 4px rgba(58,49,92,0.07);
-      --shadow-md:  0 4px 20px rgba(58,49,92,0.10);
-      --shadow-lg:  0 12px 40px rgba(58,49,92,0.13);
+      --shadow-sm:  0 1px 4px rgba(15,31,54,0.07);
+      --shadow-md:  0 4px 20px rgba(15,31,54,0.10);
+      --shadow-lg:  0 12px 40px rgba(15,31,54,0.13);
 
       --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
       --nav-h: 68px;
@@ -304,7 +304,7 @@
     ============================================================ */
     #hero {
       min-height: 100vh;
-      background: linear-gradient(145deg, #4B3B7A 0%, #5C4B8F 40%, #6E5DA0 100%);
+      background: linear-gradient(145deg, #25588A 0%, #2F689C 40%, #3B76AB 100%);
       position: relative;
       display: flex;
       align-items: center;
@@ -320,7 +320,7 @@
       right: -5%;
       width: 520px;
       height: 520px;
-      background: radial-gradient(circle, rgba(141,124,184,0.25) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(63,95,133,0.25) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -339,8 +339,8 @@
       align-items: center;
       gap: 8px;
       padding: 6px 14px;
-      background: rgba(141,124,184,0.2);
-      border: 1px solid rgba(201,190,232,0.35);
+      background: rgba(63,95,133,0.2);
+      border: 1px solid rgba(169,189,211,0.35);
       border-radius: 100px;
       font-family: var(--font-display);
       font-size: 0.78rem;
@@ -442,7 +442,7 @@
     .hero-social a:hover {
       border-color: var(--blue-light);
       color: var(--blue-light);
-      background: rgba(141,124,184,0.12);
+      background: rgba(63,95,133,0.12);
     }
 
     /* Hero right: stats card */
@@ -594,7 +594,7 @@
 
     /* About right: quick facts */
     .about-facts {
-      background: linear-gradient(145deg, #5C4B8F, #6E5DA0);
+      background: linear-gradient(145deg, #2F689C, #3B76AB);
       border-radius: var(--radius-xl);
       padding: 40px 36px;
       color: var(--white);
@@ -1022,7 +1022,7 @@
     #education { background: var(--white); }
 
     .edu-card {
-      background: linear-gradient(145deg, #4B3B7A 0%, #5C4B8F 60%, #6B5A9E 100%);
+      background: linear-gradient(145deg, #25588A 0%, #2F689C 60%, #2F689C 100%);
       border-radius: var(--radius-xl);
       padding: 52px 56px;
       color: var(--white);
@@ -1205,7 +1205,7 @@
     }
 
     .ach-card.featured {
-      background: linear-gradient(135deg, #5C4B8F, #6B5A9E);
+      background: linear-gradient(135deg, #2F689C, #2F689C);
       color: var(--white);
       border-color: transparent;
     }
@@ -1300,7 +1300,7 @@
     }
 
     .startup-badge {
-      background: linear-gradient(145deg, #5C4B8F, #6E5DA0);
+      background: linear-gradient(145deg, #2F689C, #3B76AB);
       color: var(--blue-light);
       border-radius: var(--radius-xl);
       padding: 32px;
@@ -1328,7 +1328,7 @@
     #resume { background: var(--white); }
 
     .resume-card {
-      background: linear-gradient(145deg, #4B3B7A 0%, #5C4B8F 60%, #6B5A9E 100%);
+      background: linear-gradient(145deg, #25588A 0%, #2F689C 60%, #2F689C 100%);
       border-radius: var(--radius-xl);
       padding: 56px;
       display: grid;
@@ -1390,7 +1390,7 @@
     .rp-bar.wide { width: 70%; }
     .rp-bar.medium { width: 50%; }
     .rp-bar.short { width: 35%; }
-    .rp-bar.accent { background: rgba(141,124,184,0.35); width: 60%; }
+    .rp-bar.accent { background: rgba(63,95,133,0.35); width: 60%; }
 
     .rp-name-block {
       display: flex;
@@ -1477,7 +1477,7 @@
 
     /* Right: decorative panel */
     .contact-visual {
-      background: linear-gradient(145deg, #5C4B8F, #6B5A9E);
+      background: linear-gradient(145deg, #2F689C, #2F689C);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -1522,7 +1522,7 @@
        FOOTER
     ============================================================ */
     #footer {
-      background: linear-gradient(135deg, #4B3B7A 0%, #6E5DA0 100%);
+      background: linear-gradient(135deg, #25588A 0%, #3B76AB 100%);
       padding: 40px 0 32px;
     }
 
@@ -1638,7 +1638,7 @@
     .project-card,
     .contact-card,
     .startup-card {
-      box-shadow: 0 2px 8px rgba(58,49,92,0.06);
+      box-shadow: 0 2px 8px rgba(15,31,54,0.06);
     }
 
     .skill-category:hover,
@@ -1646,7 +1646,7 @@
     .cert-card:hover,
     .ach-card:hover,
     .project-card:hover {
-      box-shadow: 0 8px 28px rgba(58,49,92,0.12);
+      box-shadow: 0 8px 28px rgba(15,31,54,0.12);
     }
 
     /* Warmer border on hover */
@@ -1673,7 +1673,7 @@
     #navbar.scrolled {
       background: rgba(255,255,255,0.97);
       backdrop-filter: blur(16px);
-      box-shadow: 0 1px 0 var(--border), 0 4px 20px rgba(58,49,92,0.06);
+      box-shadow: 0 1px 0 var(--border), 0 4px 20px rgba(15,31,54,0.06);
     }
 
     /* Refined skill bars */
@@ -1686,7 +1686,7 @@
 
     .skill-bar-fill {
       height: 100%;
-      background: linear-gradient(90deg, #6B5A9E, #A79AD1);
+      background: linear-gradient(90deg, #2F689C, #6F8FB3);
       border-radius: 100px;
       width: 0%;
       transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
@@ -1697,7 +1697,7 @@
       display: inline-block;
       padding: 3px 10px;
       background: var(--ice);
-      color: #6B5A9E;
+      color: #1F4E79;
       border-radius: 100px;
       font-size: 0.72rem;
       font-weight: 600;
@@ -1708,13 +1708,13 @@
 
     /* Timeline line lighter */
     .exp-timeline::before {
-      background: linear-gradient(to bottom, #E2D9F4, #F4EFFB);
+      background: linear-gradient(to bottom, #D6E4F2, #EDF2F8);
     }
 
     /* exp card dot lighter */
     .exp-card::before {
       background: var(--blue);
-      box-shadow: 0 0 0 3px rgba(75,63,114,0.15);
+      box-shadow: 0 0 0 3px rgba(15,42,71,0.15);
     }
 
     /* Nicer contact visual padding */
@@ -1735,25 +1735,25 @@
 
     /* Softer section label color */
     .section-label {
-      color: #6B5A9E;
+      color: #1F4E79;
     }
 
     /* Better button primary */
     .btn-primary {
-      background: #6B5A9E;
-      border-color: #6B5A9E;
-      box-shadow: 0 2px 8px rgba(75,63,114,0.2);
+      background: #1F4E79;
+      border-color: #1F4E79;
+      box-shadow: 0 2px 8px rgba(15,42,71,0.2);
     }
     .btn-primary:hover {
-      background: #5C4B8F;
-      border-color: #5C4B8F;
-      box-shadow: 0 4px 16px rgba(75,63,114,0.32);
+      background: #173F63;
+      border-color: #173F63;
+      box-shadow: 0 4px 16px rgba(15,42,71,0.32);
     }
 
     /* Animated gradient hero badge glow */
     .hero-badge {
-      background: rgba(141,124,184,0.12);
-      border-color: rgba(201,190,232,0.4);
+      background: rgba(63,95,133,0.12);
+      border-color: rgba(169,189,211,0.4);
     }
 
     /* ============================================================
@@ -1808,7 +1808,7 @@
       position: fixed;
       inset: 0;
       z-index: 2000;
-      background: rgba(58,49,92,0.55);
+      background: rgba(15,31,54,0.55);
       backdrop-filter: blur(6px);
       display: flex;
       align-items: center;
@@ -1831,7 +1831,7 @@
       width: 100%;
       max-height: 88vh;
       overflow-y: auto;
-      box-shadow: 0 32px 80px rgba(58,49,92,0.28);
+      box-shadow: 0 32px 80px rgba(15,31,54,0.28);
       transform: translateY(28px) scale(0.97);
       transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
       position: relative;
@@ -1844,7 +1844,7 @@
     .modal-header {
       height: 200px;
       border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-      background: linear-gradient(135deg, #5C4B8F 0%, #6B5A9E 100%);
+      background: linear-gradient(135deg, #2F689C 0%, #2F689C 100%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1857,8 +1857,8 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(201,190,232,0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(201,190,232,0.1) 1px, transparent 1px);
+        linear-gradient(rgba(169,189,211,0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(169,189,211,0.1) 1px, transparent 1px);
       background-size: 32px 32px;
     }
 
@@ -1988,6 +1988,123 @@
       .modal-body { padding: 24px 20px 28px; }
       .modal-highlights { grid-template-columns: 1fr; }
     }
+  
+    /* ============================================================
+       PROFESSIONAL FORMAT REFINEMENTS
+    ============================================================ */
+    body { -webkit-font-smoothing: antialiased; letter-spacing: 0.005em; }
+    .section { padding: 88px 0; }
+
+    .section-header { padding-bottom: 20px; margin-bottom: 48px; border-bottom: 1px solid var(--border); position: relative; }
+    .section-header::after { content: ''; position: absolute; left: 0; bottom: -1px; width: 64px; height: 3px; background: var(--blue); }
+    .section-label { color: var(--blue); letter-spacing: 0.18em; }
+    .section-title { letter-spacing: -0.01em; }
+
+    .exp-card, .edu-card, .project-card { border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+    .exp-card:hover { border-color: var(--slate-steel); }
+    .exp-duration, .tag { border-radius: var(--radius-sm); background: var(--ice-mid); border: 1px solid var(--border); }
+    .exp-role { letter-spacing: -0.005em; }
+
+    .exp-location::before {
+      content: ''; display: inline-block; width: 11px; height: 11px; margin-right: 6px; vertical-align: -1px;
+      background: var(--text-muted);
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5'%3E%3Cpath d='M12 22s8-7.5 8-13a8 8 0 0 0-16 0c0 5.5 8 13 8 13z'/%3E%3Ccircle cx='12' cy='9' r='3'/%3E%3C/svg%3E") center/contain no-repeat;
+              mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5'%3E%3Cpath d='M12 22s8-7.5 8-13a8 8 0 0 0-16 0c0 5.5 8 13 8 13z'/%3E%3Ccircle cx='12' cy='9' r='3'/%3E%3C/svg%3E") center/contain no-repeat;
+    }
+
+
+    /* ============================================================
+       LIGHT THEME OVERRIDES
+    ============================================================ */
+    #hero { background: linear-gradient(160deg, #FFFFFF 0%, #F1F6FB 55%, #E3EDF7 100%); }
+    #hero::after { background: radial-gradient(circle, rgba(59,111,160,0.14) 0%, transparent 70%); }
+    .hero-badge { background: var(--white); border: 1px solid var(--slate-light); color: var(--blue); }
+    .hero-badge::before { background: var(--blue); }
+    .hero-name { color: var(--navy); }
+    .hero-name span { color: var(--blue); }
+    .hero-title { color: var(--text-muted); }
+    .hero-tagline { color: var(--text-secondary); }
+    .hero-tag { background: var(--white); border: 1px solid var(--border); color: var(--text-secondary); border-radius: var(--radius-sm); }
+    #hero .btn-ghost { background: var(--white); color: var(--blue); border-color: var(--slate-steel); }
+    #hero .btn-ghost:hover { background: var(--ice-mid); }
+    .hero-social a { border-color: var(--slate-light); color: var(--text-muted); background: var(--white); }
+    .hero-social a:hover { border-color: var(--blue); color: var(--blue); background: var(--ice); }
+    .hero-card { background: var(--white); border: 1px solid var(--border); box-shadow: var(--shadow-md); backdrop-filter: none; }
+    .hero-card-title { color: var(--blue); }
+    .hero-stat { background: var(--ice); border: 1px solid var(--border); }
+    .hero-stat-num { color: var(--navy); }
+    .hero-stat-label { color: var(--text-muted); }
+    .hero-focus-item { color: var(--text-secondary); }
+    .hero-focus-dot { background: var(--blue); }
+    .scroll-hint { color: var(--text-muted); }
+    .scroll-hint svg { stroke: var(--text-muted); }
+
+    /* Navbar on light hero */
+    .nav-logo { color: var(--navy); }
+    .nav-links a { color: var(--text-secondary); }
+    .nav-links a:hover { color: var(--blue); background: var(--ice-mid); }
+    .nav-hamburger span { background: var(--navy); }
+    #navbar.scrolled { background: rgba(255,255,255,0.97); }
+
+    /* Light footer */
+    #footer { background: var(--ice-mid); border-top: 1px solid var(--border); }
+    .footer-logo { color: var(--navy); }
+    .footer-copy { color: var(--text-muted); }
+    .footer-social a { border-color: var(--slate-light); color: var(--text-muted); background: var(--white); }
+    .footer-social a:hover { border-color: var(--blue); color: var(--blue); }
+    .back-to-top { background: var(--white); border-color: var(--slate-light); color: var(--blue); }
+
+    /* ============================================================
+       FINAL YEAR PROJECT SECTION (compact)
+    ============================================================ */
+    #fyp { background: var(--white); padding: 64px 0; }
+    #research { background: var(--ice); }
+    #experience { background: var(--white); }
+    #projects { background: var(--ice); }
+    #skills { background: var(--white); }
+    #education { background: var(--ice); }
+    #fyp .section-header { margin-bottom: 32px; }
+    .fyp-card {
+      background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--blue);
+      border-radius: var(--radius-md); box-shadow: var(--shadow-sm); padding: 28px 32px;
+    }
+    .fyp-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; margin-bottom: 6px; }
+    .fyp-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--navy); }
+    .fyp-date { font-family: var(--font-display); font-size: 0.76rem; font-weight: 600; padding: 4px 12px; background: var(--ice-mid); border: 1px solid var(--border); color: var(--blue); border-radius: var(--radius-sm); white-space: nowrap; }
+    .fyp-sub { font-size: 0.88rem; font-weight: 600; color: var(--blue); margin-bottom: 16px; }
+    .fyp-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+
+    /* ============================================================
+       READABILITY FIXES FOR BLUE INFO CARDS
+       Solid, high-contrast text on a consistent steel-blue gradient
+    ============================================================ */
+    .about-facts, .edu-card, .ach-card.featured, .startup-badge, .resume-card, .contact-visual {
+      background: linear-gradient(145deg, #1F4E79 0%, #2A5F91 100%);
+      color: #FFFFFF;
+    }
+    /* About: At a Glance */
+    .about-facts-title { color: #C9DCEE; }
+    .fact-row { border-bottom: 1px solid rgba(255,255,255,0.22); }
+    .fact-key { color: #D3E2F1; }
+    .fact-val { color: #FFFFFF; }
+    .about-facts .fact-val[style] { color: #B6F2CF !important; }
+    /* Education card */
+    .edu-university, .edu-courses-title { color: #C9DCEE; }
+    .edu-metric { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.2); }
+    .edu-metric-label { color: #D3E2F1; }
+    .edu-course { color: #F1F6FB; }
+    .edu-course::before { background: #C9DCEE; }
+    /* Featured achievement, startup badge, resume, contact panel */
+    .ach-card.featured .ach-desc { color: #E6EEF7; }
+    .startup-badge { color: #FFFFFF; }
+    .startup-badge-date { color: #D3E2F1; }
+    .resume-text-label { color: #C9DCEE; }
+    .resume-text-body { color: #E6EEF7; }
+    .resume-preview { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.22); }
+    .contact-visual-sub { color: #E6EEF7; }
+    .contact-visual [style*="rgba(255,255,255,0.45)"] { color: #C9DCEE !important; }
+    .contact-visual [style*="rgba(255,255,255,0.72)"] { color: #FFFFFF !important; }
+    .availability-badge { background: rgba(255,255,255,0.18); color: #FFFFFF; }
   </style>
 </head>
 <body>
@@ -2001,10 +2118,11 @@
       <a href="#hero" class="nav-logo">Rida Zahra</a>
       <ul class="nav-links" role="list">
         <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
+        <li><a href="#fyp">FYP</a></li>
         <li><a href="#research">Research</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#achievements">Achievements</a></li>
         <li><a href="#contact" class="nav-cta">Contact</a></li>
@@ -2019,10 +2137,11 @@
 <!-- Mobile nav -->
 <nav class="nav-mobile" id="mobileNav" aria-label="Mobile navigation">
   <a href="#about" class="mobile-link">About</a>
-  <a href="#skills" class="mobile-link">Skills</a>
-  <a href="#projects" class="mobile-link">Projects</a>
-  <a href="#experience" class="mobile-link">Experience</a>
+  <a href="#fyp" class="mobile-link">Final Year Project</a>
   <a href="#research" class="mobile-link">Research</a>
+  <a href="#experience" class="mobile-link">Experience</a>
+  <a href="#projects" class="mobile-link">Projects</a>
+  <a href="#skills" class="mobile-link">Skills</a>
   <a href="#education" class="mobile-link">Education</a>
   <a href="#achievements" class="mobile-link">Achievements</a>
   <a href="#contact" class="mobile-link">Contact</a>
@@ -2053,7 +2172,7 @@
 
         <div class="hero-actions">
           <!-- === Replace href with your actual resume PDF path === -->
-          <a href="resume.pdf" download class="btn btn-primary">
+          <a href="RidaZahra_CV.pdf" download class="btn btn-primary">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download Resume
           </a>
@@ -2062,11 +2181,11 @@
 
         <div class="hero-social">
           <!-- === Replace # with actual LinkedIn URL === -->
-          <a href="https://www.linkedin.com/in/ridazahra" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/ridazahra2026" target="_blank" rel="noopener" aria-label="LinkedIn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
           <!-- === Replace # with actual GitHub URL === -->
-          <a href="https://github.com/ridazahra" target="_blank" rel="noopener" aria-label="GitHub">
+          <a href="https://github.com/Rzrida" target="_blank" rel="noopener" aria-label="GitHub">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
           </a>
           <a href="mailto:rz.ridazahra@gmail.com" aria-label="Email">
@@ -2193,122 +2312,289 @@
 </section>
 
 <!-- ============================================================
-     SKILLS
+     FINAL YEAR PROJECT
 ============================================================ -->
-<section id="skills" class="section" aria-label="Technical Skills">
+<section id="fyp" class="section" aria-label="Final Year Project">
   <div class="container">
     <div class="section-header reveal">
-      <p class="section-label">Technical Skills</p>
-      <h2 class="section-title">Engineering across the full stack</h2>
-      <p class="section-subtitle">From RTL design and RISC-V assembly to deep learning pipelines and full-stack web development.</p>
+      <p class="section-label">Final Year Project</p>
+      <h2 class="section-title">Final Year Project</h2>
     </div>
 
-    <div class="skills-grid">
+    <div class="fyp-card reveal">
+      <div class="fyp-top">
+        <h3 class="fyp-title">Edge AI &amp; Medical Imaging (BPPV Detection)</h3>
+        <span class="fyp-date">August 2026 – Present</span>
+      </div>
+      <p class="fyp-sub">Final Year Project · NUST</p>
+      <ul class="exp-list">
+        <li>
+          Developing an AI-based system to detect BPPV through nystagmus analysis,
+          including the development of models, algorithms, and an edge-AI enabled end device.
+        </li>
+      </ul>
+      <div class="fyp-tags">
+        <span class="tag">Research Project</span>
+        <span class="tag">Edge AI</span>
+        <span class="tag">Medical Imaging</span>
+        <span class="tag">Nystagmus Analysis</span>
+        <span class="tag">BPPV Detection</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Programming Languages -->
-      <div class="skill-category reveal">
-        <div class="skill-cat-title">Programming Languages</div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-header">
-            <span class="skill-bar-name">Python</span>
-            <span class="skill-bar-pct">90%</span>
-          </div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+<!-- ============================================================
+     RESEARCH EXPERIENCE
+     Research projects, investigations, and academic work
+============================================================ -->
+<section id="research" class="section" aria-label="Research Experience">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">Research</p>
+      <h2 class="section-title">Research &amp; Academic Work</h2>
+      <p class="section-subtitle">
+        Independent and ongoing research projects exploring signal processing,
+        audio analysis, 3D vision, and computational AI, with work currently
+        in development and not yet published.
+      </p>
+    </div>
+
+    <div class="exp-timeline">
+       
+         <!-- RESEARCH PROJECT 4 -->
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <h3 class="exp-role">BAM &amp; PolyP Research</h3>
+          <span class="exp-duration">Unpublished Research</span>
         </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-header">
-            <span class="skill-bar-name">C++</span>
-            <span class="skill-bar-pct">80%</span>
-          </div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+        <p class="exp-org">AI &amp; Computational Research</p>
+        <p class="exp-location">Independent Research</p>
+        <ul class="exp-list">
+          <li>
+            Investigating BAM and PolyP-based approaches as part of an ongoing
+            exploration of efficient computational methods.
+          </li>
+          <li>
+            Studying existing techniques and developing implementations for
+            experimental evaluation and comparison.
+          </li>
+          <li>
+            Exploring resource-efficient approaches with the goal of developing
+            a potential research contribution.
+          </li>
+        </ul>
+      </div>
+      <!-- RESEARCH PROJECT 1 -->
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <h3 class="exp-role">Airport Noise Reduction</h3>
+          <span class="exp-duration">Unpublished Research</span>
         </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-header">
-            <span class="skill-bar-name">C</span>
-            <span class="skill-bar-pct">75%</span>
-          </div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-header">
-            <span class="skill-bar-name">Java</span>
-            <span class="skill-bar-pct">70%</span>
-          </div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-header">
-            <span class="skill-bar-name">JavaScript</span>
-            <span class="skill-bar-pct">70%</span>
-          </div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-header">
-            <span class="skill-bar-name">Verilog / RISC-V Assembly</span>
-            <span class="skill-bar-pct">65%</span>
-          </div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div>
-        </div>
+        <p class="exp-org">Signal Processing &amp; Audio Analysis</p>
+        <p class="exp-location">Independent Research</p>
+        <ul class="exp-list">
+          <li>
+            Investigated signal-processing techniques for reducing airport and
+            aircraft noise in audio signals.
+          </li>
+          <li>
+            Explored noise characteristics, filtering methods, and audio
+            enhancement techniques to improve signal quality.
+          </li>
+          <li>
+            Developed the work as an academic research study involving
+            implementation, experimentation, and analysis.
+          </li>
+        </ul>
       </div>
 
-      <!-- AI & Machine Learning -->
-      <div class="skill-category reveal">
-        <div class="skill-cat-title">AI & Machine Learning</div>
-        <div class="skill-tags">
-          <span class="skill-tag">TensorFlow</span>
-          <span class="skill-tag">TensorFlow Lite</span>
-          <span class="skill-tag">Scikit-learn</span>
-          <span class="skill-tag">ONNX</span>
-          <span class="skill-tag">YOLOv8</span>
-          <span class="skill-tag">OpenCV</span>
-          <span class="skill-tag">Deep Learning</span>
-          <span class="skill-tag">Edge AI Deployment</span>
-          <span class="skill-tag">Computer Vision</span>
-          <span class="skill-tag">Image Processing</span>
-          <span class="skill-tag">Lane Detection</span>
-          <span class="skill-tag">Object Detection</span>
+      <!-- RESEARCH PROJECT 2 -->
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <h3 class="exp-role">Quran, Music &amp; Speech: Comparative Analysis</h3>
+          <span class="exp-duration">Unpublished Research</span>
         </div>
+        <p class="exp-org">Signal Processing &amp; Audio Analysis</p>
+        <p class="exp-location">Independent Research</p>
+        <ul class="exp-list">
+          <li>
+            Conducted a comparative signal-processing study of Quranic
+            recitation, music, and speech.
+          </li>
+          <li>
+            Analyzed acoustic and auditory characteristics to investigate
+            differences in perceived relaxation and well-being.
+          </li>
+          <li>
+            Explored potential relationships between measurable audio
+            characteristics and human perceptual responses.
+          </li>
+        </ul>
       </div>
 
-      <!-- Hardware & Embedded -->
-      <div class="skill-category reveal">
-        <div class="skill-cat-title">Hardware & Embedded Systems</div>
-        <div class="skill-tags">
-          <span class="skill-tag">ESP32</span>
-          <span class="skill-tag">Raspberry Pi</span>
-          <span class="skill-tag">Arduino</span>
-          <span class="skill-tag">FreeRTOS</span>
-          <span class="skill-tag">FPGA Development</span>
-          <span class="skill-tag">Verilog</span>
-          <span class="skill-tag">VHDL</span>
-          <span class="skill-tag">RISC-V SoC</span>
-          <span class="skill-tag">Embedded Linux</span>
-          <span class="skill-tag">IoT</span>
-          <span class="skill-tag">Digital Logic Design</span>
-          <span class="skill-tag">Microprocessors</span>
+      <!-- RESEARCH PROJECT 3 -->
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <h3 class="exp-role">VISTA 3D</h3>
+          <span class="exp-duration">Unpublished Research</span>
         </div>
+        <p class="exp-org">3D Vision &amp; Computational Research</p>
+        <p class="exp-location">Independent Research</p>
+        <ul class="exp-list">
+          <li>
+            Explored a 3D-based research approach and investigated its
+            potential implementation for the target research problem.
+          </li>
+          <li>
+            Developed an initial implementation and evaluated the approach
+            against available computational and hardware resources.
+          </li>
+          <li>
+            The project was paused due to resource limitations, providing
+            direction for potential future implementation.
+          </li>
+        </ul>
       </div>
 
-      <!-- Software Engineering -->
-      <div class="skill-category reveal">
-        <div class="skill-cat-title">Software Engineering & Tools</div>
-        <div class="skill-tags">
-          <span class="skill-tag">OOP</span>
-          <span class="skill-tag">Data Structures & Algorithms</span>
-          <span class="skill-tag">Git & GitHub</span>
-          <span class="skill-tag">REST APIs</span>
-          <span class="skill-tag">ASP.NET Core MVC</span>
-          <span class="skill-tag">Flask</span>
-          <span class="skill-tag">Database Systems</span>
-          <span class="skill-tag">SQL Server</span>
-          <span class="skill-tag">Computer Networks</span>
-          <span class="skill-tag">Operating Systems</span>
-          <span class="skill-tag">MATLAB</span>
-          <span class="skill-tag">QEMU</span>
-          <span class="skill-tag">Linux</span>
+   
+
+      <!-- END RESEARCH PROJECTS -->
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     EXPERIENCE
+     To add an internship: duplicate the .exp-card div
+============================================================ -->
+<section id="experience" class="section" aria-label="Work Experience">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">Experience</p>
+      <h2 class="section-title">Where I've applied my skills</h2>
+      <p class="section-subtitle">
+        Hands-on internship experience in SoC design, machine learning, and Python development.
+      </p>
+    </div>
+
+    <div class="exp-timeline">
+
+      <!-- INTERNSHIP CARD — duplicate this block to add more -->
+
+      
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <h3 class="exp-role">Embedded &amp; IoT Intern</h3>
+          <span class="exp-duration">Jun 2026 – Jul 2026</span>
         </div>
+        <p class="exp-org">CARE Private Limited</p>
+        <p class="exp-location">Islamabad, Pakistan</p>
+        <ul class="exp-list">
+          <li>
+            Built and tested industrial IoT monitoring solutions using MQTT,
+            ESP32 microcontrollers, and sensor integration for real-time
+            industrial applications.
+          </li>
+          <li>
+            Programmed and validated automation logic on Siemens S7-1200 PLCs
+            using Ladder Logic, implementing control sequences and interfacing
+            with industrial hardware.
+          </li>
+          <li>
+            Extracted and monitored live PLC process data, enabling integration
+            with external IoT systems and supporting data acquisition and
+            validation workflows.
+          </li>
+        </ul>
       </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <h3 class="exp-role">Research Intern</h3>
+          <span class="exp-duration">Jul 2026 – Present</span>
+        </div>
+        <p class="exp-org">Sejong University, South Korea × NUST, Pakistan</p>
+        <p class="exp-location">Hybrid — NUST, Islamabad, Pakistan</p>
+        <ul class="exp-list">
+          <li>
+            Conducting collaborative research between Sejong University and NUST,
+            with a focus on developing an independent research paper.
+          </li>
+          <li>
+            Explored an initial 3D-based implementation before pivoting due to
+            computational and resource constraints.
+          </li>
+          <li>
+            Developing a resource-efficient BAM-based approach through implementation,
+            experimentation, evaluation, and research documentation.
+          </li>
+        </ul>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <h3 class="exp-role">SoC &amp; Chip Design Intern</h3>
+          <span class="exp-duration">Jun 2025 – Aug 2025</span>
+        </div>
+        <p class="exp-org">ChipXprt Private Limited</p>
+        <p class="exp-location">Islamabad, Pakistan</p>
+        <ul class="exp-list">
+          <li>
+            Ported and validated FreeRTOS on a custom RISC-V SoC; built ELF
+            toolchain and verified ISA compatibility across RTL and QEMU emulation.
+          </li>
+          <li>
+            Implemented Supervisor (S) and User (U) privilege levels with trap
+            routing and context switching — groundwork for Linux enablement.
+          </li>
+          <li>
+            Performed hardware/software integration tests and regression suites,
+            reducing boot/trap failures during validation.
+          </li>
+        </ul>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <h3 class="exp-role">Machine Learning Intern</h3>
+          <span class="exp-duration">Aug 2024</span>
+        </div>
+        <p class="exp-org">Codic Solution</p>
+        <p class="exp-location">Remote</p>
+        <ul class="exp-list">
+          <li>
+            Applied Python-based machine learning techniques to develop and
+            optimize intelligent solutions.
+          </li>
+          <li>
+            Gained hands-on experience with model training, evaluation, and
+            optimization workflows.
+          </li>
+        </ul>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <h3 class="exp-role">Python Programming Intern</h3>
+          <span class="exp-duration">Jul 2024 – Aug 2024</span>
+        </div>
+        <p class="exp-org">HiSkyTech</p>
+        <p class="exp-location">Remote</p>
+        <ul class="exp-list">
+          <li>
+            Developed and integrated Python modules for multiple projects,
+            focusing on reliability, scalability, and clean code practices.
+          </li>
+          <li>
+            Collaborated on modular codebase architecture and contributed to
+            production-level Python development.
+          </li>
+        </ul>
+      </div>
+
+      <!-- END INTERNSHIP CARD -->
 
     </div>
   </div>
@@ -2957,256 +3243,122 @@
 </section>
 
 <!-- ============================================================
-     EXPERIENCE
-     To add an internship: duplicate the .exp-card div
+     SKILLS
 ============================================================ -->
-<section id="experience" class="section" aria-label="Work Experience">
+<section id="skills" class="section" aria-label="Technical Skills">
   <div class="container">
     <div class="section-header reveal">
-      <p class="section-label">Experience</p>
-      <h2 class="section-title">Where I've applied my skills</h2>
-      <p class="section-subtitle">
-        Hands-on internship experience in SoC design, machine learning, and Python development.
-      </p>
+      <p class="section-label">Technical Skills</p>
+      <h2 class="section-title">Engineering across the full stack</h2>
+      <p class="section-subtitle">From RTL design and RISC-V assembly to deep learning pipelines and full-stack web development.</p>
     </div>
 
-    <div class="exp-timeline">
+    <div class="skills-grid">
 
-      <!-- INTERNSHIP CARD — duplicate this block to add more -->
-
-      
-      <div class="exp-card reveal">
-        <div class="exp-header">
-          <h3 class="exp-role">Embedded &amp; IoT Intern</h3>
-          <span class="exp-duration">Jun 2026 – Jul 2026</span>
+      <!-- Programming Languages -->
+      <div class="skill-category reveal">
+        <div class="skill-cat-title">Programming Languages</div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header">
+            <span class="skill-bar-name">Python</span>
+            <span class="skill-bar-pct">90%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
         </div>
-        <p class="exp-org">CARE Private Limited</p>
-        <p class="exp-location">📍 Islamabad, Pakistan</p>
-        <ul class="exp-list">
-          <li>
-            Built and tested industrial IoT monitoring solutions using MQTT,
-            ESP32 microcontrollers, and sensor integration for real-time
-            industrial applications.
-          </li>
-          <li>
-            Programmed and validated automation logic on Siemens S7-1200 PLCs
-            using Ladder Logic, implementing control sequences and interfacing
-            with industrial hardware.
-          </li>
-          <li>
-            Extracted and monitored live PLC process data, enabling integration
-            with external IoT systems and supporting data acquisition and
-            validation workflows.
-          </li>
-        </ul>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header">
+            <span class="skill-bar-name">C++</span>
+            <span class="skill-bar-pct">80%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header">
+            <span class="skill-bar-name">C</span>
+            <span class="skill-bar-pct">75%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header">
+            <span class="skill-bar-name">Java</span>
+            <span class="skill-bar-pct">70%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header">
+            <span class="skill-bar-name">JavaScript</span>
+            <span class="skill-bar-pct">70%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header">
+            <span class="skill-bar-name">Verilog / RISC-V Assembly</span>
+            <span class="skill-bar-pct">65%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div>
+        </div>
       </div>
 
-      <div class="exp-card reveal">
-        <div class="exp-header">
-          <h3 class="exp-role">Research Intern</h3>
-          <span class="exp-duration">Jul 2026 – Present</span>
+      <!-- AI & Machine Learning -->
+      <div class="skill-category reveal">
+        <div class="skill-cat-title">AI & Machine Learning</div>
+        <div class="skill-tags">
+          <span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">TensorFlow Lite</span>
+          <span class="skill-tag">Scikit-learn</span>
+          <span class="skill-tag">ONNX</span>
+          <span class="skill-tag">YOLOv8</span>
+          <span class="skill-tag">OpenCV</span>
+          <span class="skill-tag">Deep Learning</span>
+          <span class="skill-tag">Edge AI Deployment</span>
+          <span class="skill-tag">Computer Vision</span>
+          <span class="skill-tag">Image Processing</span>
+          <span class="skill-tag">Lane Detection</span>
+          <span class="skill-tag">Object Detection</span>
         </div>
-        <p class="exp-org">Sejong University, South Korea × NUST, Pakistan</p>
-        <p class="exp-location">📍 Hybrid — NUST, Islamabad, Pakistan</p>
-        <ul class="exp-list">
-          <li>
-            Conducting collaborative research between Sejong University and NUST,
-            with a focus on developing an independent research paper.
-          </li>
-          <li>
-            Explored an initial 3D-based implementation before pivoting due to
-            computational and resource constraints.
-          </li>
-          <li>
-            Developing a resource-efficient BAM-based approach through implementation,
-            experimentation, evaluation, and research documentation.
-          </li>
-        </ul>
       </div>
 
-      <div class="exp-card reveal">
-        <div class="exp-header">
-          <h3 class="exp-role">SoC &amp; Chip Design Intern</h3>
-          <span class="exp-duration">Jun 2025 – Aug 2025</span>
+      <!-- Hardware & Embedded -->
+      <div class="skill-category reveal">
+        <div class="skill-cat-title">Hardware & Embedded Systems</div>
+        <div class="skill-tags">
+          <span class="skill-tag">ESP32</span>
+          <span class="skill-tag">Raspberry Pi</span>
+          <span class="skill-tag">Arduino</span>
+          <span class="skill-tag">FreeRTOS</span>
+          <span class="skill-tag">FPGA Development</span>
+          <span class="skill-tag">Verilog</span>
+          <span class="skill-tag">VHDL</span>
+          <span class="skill-tag">RISC-V SoC</span>
+          <span class="skill-tag">Embedded Linux</span>
+          <span class="skill-tag">IoT</span>
+          <span class="skill-tag">Digital Logic Design</span>
+          <span class="skill-tag">Microprocessors</span>
         </div>
-        <p class="exp-org">ChipXprt Private Limited</p>
-        <p class="exp-location">📍 Islamabad, Pakistan</p>
-        <ul class="exp-list">
-          <li>
-            Ported and validated FreeRTOS on a custom RISC-V SoC; built ELF
-            toolchain and verified ISA compatibility across RTL and QEMU emulation.
-          </li>
-          <li>
-            Implemented Supervisor (S) and User (U) privilege levels with trap
-            routing and context switching — groundwork for Linux enablement.
-          </li>
-          <li>
-            Performed hardware/software integration tests and regression suites,
-            reducing boot/trap failures during validation.
-          </li>
-        </ul>
       </div>
 
-      <div class="exp-card reveal">
-        <div class="exp-header">
-          <h3 class="exp-role">Machine Learning Intern</h3>
-          <span class="exp-duration">Aug 2024</span>
+      <!-- Software Engineering -->
+      <div class="skill-category reveal">
+        <div class="skill-cat-title">Software Engineering & Tools</div>
+        <div class="skill-tags">
+          <span class="skill-tag">OOP</span>
+          <span class="skill-tag">Data Structures & Algorithms</span>
+          <span class="skill-tag">Git & GitHub</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">ASP.NET Core MVC</span>
+          <span class="skill-tag">Flask</span>
+          <span class="skill-tag">Database Systems</span>
+          <span class="skill-tag">SQL Server</span>
+          <span class="skill-tag">Computer Networks</span>
+          <span class="skill-tag">Operating Systems</span>
+          <span class="skill-tag">MATLAB</span>
+          <span class="skill-tag">QEMU</span>
+          <span class="skill-tag">Linux</span>
         </div>
-        <p class="exp-org">Codic Solution</p>
-        <p class="exp-location">📍 Remote</p>
-        <ul class="exp-list">
-          <li>
-            Applied Python-based machine learning techniques to develop and
-            optimize intelligent solutions.
-          </li>
-          <li>
-            Gained hands-on experience with model training, evaluation, and
-            optimization workflows.
-          </li>
-        </ul>
       </div>
-
-      <div class="exp-card reveal">
-        <div class="exp-header">
-          <h3 class="exp-role">Python Programming Intern</h3>
-          <span class="exp-duration">Jul 2024 – Aug 2024</span>
-        </div>
-        <p class="exp-org">HiSkyTech</p>
-        <p class="exp-location">📍 Remote</p>
-        <ul class="exp-list">
-          <li>
-            Developed and integrated Python modules for multiple projects,
-            focusing on reliability, scalability, and clean code practices.
-          </li>
-          <li>
-            Collaborated on modular codebase architecture and contributed to
-            production-level Python development.
-          </li>
-        </ul>
-      </div>
-
-      <!-- END INTERNSHIP CARD -->
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     RESEARCH EXPERIENCE
-     Research projects, investigations, and academic work
-============================================================ -->
-<section id="research" class="section" aria-label="Research Experience">
-  <div class="container">
-    <div class="section-header reveal">
-      <p class="section-label">Research</p>
-      <h2 class="section-title">Research &amp; Academic Work</h2>
-      <p class="section-subtitle">
-        Independent and ongoing research projects exploring signal processing,
-        audio analysis, 3D vision, and computational AI, with work currently
-        in development and not yet published.
-      </p>
-    </div>
-
-    <div class="exp-timeline">
-       
-         <!-- RESEARCH PROJECT 4 -->
-      <div class="exp-card reveal">
-        <div class="exp-header">
-          <h3 class="exp-role">BAM &amp; PolyP Research</h3>
-          <span class="exp-duration">Unpublished Research</span>
-        </div>
-        <p class="exp-org">AI &amp; Computational Research</p>
-        <p class="exp-location">📍 Independent Research</p>
-        <ul class="exp-list">
-          <li>
-            Investigating BAM and PolyP-based approaches as part of an ongoing
-            exploration of efficient computational methods.
-          </li>
-          <li>
-            Studying existing techniques and developing implementations for
-            experimental evaluation and comparison.
-          </li>
-          <li>
-            Exploring resource-efficient approaches with the goal of developing
-            a potential research contribution.
-          </li>
-        </ul>
-      </div>
-      <!-- RESEARCH PROJECT 1 -->
-      <div class="exp-card reveal">
-        <div class="exp-header">
-          <h3 class="exp-role">Airport Noise Reduction</h3>
-          <span class="exp-duration">Unpublished Research</span>
-        </div>
-        <p class="exp-org">Signal Processing &amp; Audio Analysis</p>
-        <p class="exp-location">📍 Independent Research</p>
-        <ul class="exp-list">
-          <li>
-            Investigated signal-processing techniques for reducing airport and
-            aircraft noise in audio signals.
-          </li>
-          <li>
-            Explored noise characteristics, filtering methods, and audio
-            enhancement techniques to improve signal quality.
-          </li>
-          <li>
-            Developed the work as an academic research study involving
-            implementation, experimentation, and analysis.
-          </li>
-        </ul>
-      </div>
-
-      <!-- RESEARCH PROJECT 2 -->
-      <div class="exp-card reveal">
-        <div class="exp-header">
-          <h3 class="exp-role">Quran, Music &amp; Speech: Comparative Analysis</h3>
-          <span class="exp-duration">Unpublished Research</span>
-        </div>
-        <p class="exp-org">Signal Processing &amp; Audio Analysis</p>
-        <p class="exp-location">📍 Independent Research</p>
-        <ul class="exp-list">
-          <li>
-            Conducted a comparative signal-processing study of Quranic
-            recitation, music, and speech.
-          </li>
-          <li>
-            Analyzed acoustic and auditory characteristics to investigate
-            differences in perceived relaxation and well-being.
-          </li>
-          <li>
-            Explored potential relationships between measurable audio
-            characteristics and human perceptual responses.
-          </li>
-        </ul>
-      </div>
-
-      <!-- RESEARCH PROJECT 3 -->
-      <div class="exp-card reveal">
-        <div class="exp-header">
-          <h3 class="exp-role">VISTA 3D</h3>
-          <span class="exp-duration">Unpublished Research</span>
-        </div>
-        <p class="exp-org">3D Vision &amp; Computational Research</p>
-        <p class="exp-location">📍 Independent Research</p>
-        <ul class="exp-list">
-          <li>
-            Explored a 3D-based research approach and investigated its
-            potential implementation for the target research problem.
-          </li>
-          <li>
-            Developed an initial implementation and evaluated the approach
-            against available computational and hardware resources.
-          </li>
-          <li>
-            The project was paused due to resource limitations, providing
-            direction for potential future implementation.
-          </li>
-        </ul>
-      </div>
-
-   
-
-      <!-- END RESEARCH PROJECTS -->
 
     </div>
   </div>
@@ -3337,7 +3489,7 @@
         <p class="startup-role">CFO & Co-Founder</p>
         <h3 class="startup-name">Paper Peace</h3>
         <p class="startup-desc">Co-founded an e-commerce stationery brand. Leading financial operations, budgeting, and pricing strategy while supporting online store growth and brand expansion on Instagram.</p>
-        <p class="startup-meta">📅 January 2025 – Present &nbsp;|&nbsp; 📍 Islamabad, Pakistan</p>
+        <p class="startup-meta">January 2025 – Present &nbsp;|&nbsp; Islamabad, Pakistan</p>
         <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
           <a href="https://www.instagram.com/paperpeace" target="_blank" rel="noopener" class="btn btn-outline">
             View on Instagram
@@ -3379,7 +3531,7 @@
           </a>
 
           <!-- === Replace with actual LinkedIn URL === -->
-          <a href="https://www.linkedin.com/in/ridazahra" target="_blank" rel="noopener" class="contact-link">
+          <a href="https://www.linkedin.com/in/ridazahra2026" target="_blank" rel="noopener" class="contact-link">
             <div class="contact-link-icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
             </div>
@@ -3390,7 +3542,7 @@
           </a>
 
           <!-- === Replace with actual GitHub URL === -->
-          <a href="https://github.com/ridazahra" target="_blank" rel="noopener" class="contact-link">
+          <a href="https://github.com/Rzrida" target="_blank" rel="noopener" class="contact-link">
             <div class="contact-link-icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             </div>
@@ -3445,10 +3597,10 @@
         <div class="footer-copy">© 2025 Rida Zahra. All rights reserved.</div>
       </div>
       <div class="footer-social">
-        <a href="https://www.linkedin.com/in/ridazahra" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/ridazahra2026" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         </a>
-        <a href="https://github.com/ridazahra" target="_blank" rel="noopener" aria-label="GitHub">
+        <a href="https://github.com/Rzrida" target="_blank" rel="noopener" aria-label="GitHub">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
         </a>
         <a href="mailto:rz.ridazahra@gmail.com" aria-label="Email">
